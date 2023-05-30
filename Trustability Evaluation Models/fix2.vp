@@ -1,0 +1,76 @@
+// SPDX-License-Identifier: BSD-3-Clause
+//
+// VerifPal code that tries to model a fix to a trustabillity issue of Blockchain data
+// gathering for SoC in untrusted place without maintaining the blockchain
+// itself.
+// propose solution based on a signed certificate generated in exchange.
+// Copyright (C) STMicroelectronics 2022
+// Author: Maxime MERE <maxime.mere@st.com> for STMicroelectronics.
+//
+attacker[active]
+
+principal Alice[
+    knows private chipInfoAndPrice
+    knows private skAlice
+    pkAlice = G^skAlice
+]
+
+Alice -> SoC: [pkAlice],[chipInfoAndPrice] //Provisioning
+phase[1]
+
+principal SoC[]
+
+Alice -> Alice_node: [chipInfoAndPrice] //Register
+
+principal Alice_node[]
+
+principal Blockchain[]
+
+Alice_node -> Blockchain: [chipInfoAndPrice] //Register
+
+phase[2]
+
+SoC -> Bob: [pkAlice] //Bob is able to know Alice public key by asking to SoC or many other means
+
+principal Bob[
+    knows private updtRequestAndPay
+]
+
+Bob -> Bob_node: [updtRequestAndPay],[pkAlice] //Request upgrade
+
+principal Bob_node[]
+
+Bob_node -> Blockchain: [updtRequestAndPay],[pkAlice] //Request upgrade
+
+Blockchain -> Alice_node: [updtRequestAndPay] //broadcast
+
+phase[3]
+//Alice is notified
+principal Alice[
+    generates certificate
+    signed_certif = SIGN(skAlice,certificate)
+]
+
+Alice -> Blockchain: [signed_certif],[certificate]
+
+principal Blockchain[
+    _ = SIGNVERIF(pkAlice,certificate,signed_certif)?
+    data = HASH(signed_certif,chipInfoAndPrice)
+]
+
+Blockchain -> Bob_node: [data],[signed_certif],[certificate] //Query config
+
+principal Bob_node[]
+
+// In the view of Alice Bob_node is untrusted so transfered values are unguarded because mutable 
+Bob_node -> SoC: data, signed_certif,certificate //Query config
+
+
+principal SoC[
+    _ = SIGNVERIF(pkAlice, certificate, signed_certif)?
+    _ = ASSERT(data, HASH(signed_certif,chipInfoAndPrice))?
+]
+
+queries[
+    authentication? Bob_node -> SoC: data
+]

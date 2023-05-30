@@ -1,0 +1,67 @@
+// SPDX-License-Identifier: BSD-3-Clause
+//
+// VerifPal code that tries to model a fix to a trustabillity issue of Blockchain data
+// gathering for SoC in untrusted place without maintaining the blockchain
+// itself.
+// Propose a solution where the SoC checks a part of the Blockchain.
+// Copyright (C) STMicroelectronics 2022
+// Author: Maxime MERE <maxime.mere@st.com> for STMicroelectronics.
+//
+attacker[active]
+
+principal Alice[
+    knows private chipInfoAndPrice
+]
+
+//Alice -> SoC: tmp //Provisioning
+
+phase[1]
+
+principal SoC[
+    knows private chipInfoAndPrice
+]
+
+Alice -> Alice_node: [chipInfoAndPrice] //Register
+
+principal Alice_node[]
+
+principal Blockchain[]
+
+Alice_node -> Blockchain: [chipInfoAndPrice] //Register
+
+phase[2]
+
+principal Bob[
+    knows private updtRequestAndPay
+]
+
+Bob -> Bob_node: [updtRequestAndPay] //Request upgrade
+
+principal Bob_node[]
+
+Bob_node -> Blockchain: [updtRequestAndPay] //Request upgrade
+
+phase[3]
+
+principal Blockchain[
+    data = HASH(updtRequestAndPay,chipInfoAndPrice)
+    generates newBlocktransaction
+    newBlock = HASH(data,newBlocktransaction)
+
+]
+
+Blockchain -> Bob_node: [data],[newBlock],[newBlocktransaction] //Query config
+// In the view of Alice Bob_node is untrusted so transfered values are unguarded because mutable 
+Bob_node -> SoC: data, updtRequestAndPay,[newBlock],[newBlocktransaction] //Query config
+//newBlock and newBlocktransaction are guarded because their generation/modification cost to much to be done to an attacker
+
+
+principal SoC[
+    _ = ASSERT(newBlock,HASH(data,newBlocktransaction))? //uppper block verification
+    _ = ASSERT(data, HASH(updtRequestAndPay,chipInfoAndPrice))?
+]
+
+
+queries[
+    authentication? Bob_node -> SoC: data
+]

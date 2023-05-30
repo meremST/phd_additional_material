@@ -1,0 +1,67 @@
+// SPDX-License-Identifier: BSD-3-Clause
+//
+// VerifPal code that tries to model trustabillity issue of Blockchain data
+// gathering for SoC in untrusted place without maintaining the blockchain
+// itself.
+// Copyright (C) STMicroelectronics 2022
+// Author: Maxime MERE <maxime.mere@st.com> for STMicroelectronics.
+//
+attacker[active]
+
+principal Alice[
+    knows private chipInfoAndPrice
+]
+
+//Alice -> SoC: tmp //Provisioning
+
+phase[1]
+
+principal SoC[
+    knows private chipInfoAndPrice
+]
+
+Alice -> Alice_node: [chipInfoAndPrice] //Register
+
+principal Alice_node[]
+
+principal Blockchain[]
+
+Alice_node -> Blockchain: [chipInfoAndPrice] //Register
+
+phase[2]
+
+principal Bob[
+    knows private updtRequestAndPay
+]
+
+Bob -> Bob_node: [updtRequestAndPay] //Request upgrade
+
+principal Bob_node[]
+
+Bob_node -> Blockchain: [updtRequestAndPay] //Request upgrade
+
+phase[3]
+
+principal Blockchain[
+    data = HASH(updtRequestAndPay,chipInfoAndPrice)
+]
+
+Blockchain -> Bob_node: [data] //Query config
+
+//In the view of Bob Bob_node is trusted so transfered values are guarded because Bob is able to authentify and check Bob_node messages
+// In the view of Alice Bob_node is untrusted so transfered values are unguarded because mutable 
+Bob_node -> SoC: data, updtRequestAndPay //Query config
+
+
+//Quick fix: make SoC use a node trusted by Alice (Bob node is now considered as trusted by Alice):
+//Bob_node -> SoC: data, [updtRequestAndPay] //Query config
+//Problem: there is no more decentralization, therefore no more interest in using blockchain
+
+principal SoC[
+    _ = ASSERT(data, HASH(updtRequestAndPay,chipInfoAndPrice))?
+]
+
+
+queries[
+    authentication? Bob_node -> SoC: data
+]
