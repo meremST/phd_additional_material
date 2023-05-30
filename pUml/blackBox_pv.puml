@@ -1,0 +1,34 @@
+@startuml
+'left to right direction
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+hide empty members
+'hide fields
+allowmixing
+actor "Manufacturer" as Manufacturer
+actor "Client" as Client
+actor "Blockchain" as Blockchain 
+actor "SoCIPs" as SoCIPs 
+actor "User" as User 
+class "SystemUnderStudy" as SystemUnderStudy  {
+}
+User <|-- Manufacturer
+User <|-- Client
+Manufacturer -- Client : > sendUidAndAccProof\nsendProof\nnewScriptResp
+Manufacturer -[#transparent]- Client : < sendNewBatch\nsendNewScript
+
+actor "SecureStorage" as SecureStorage 
+User-[#transparent]- Blockchain : > getBatchInfo\ndivideBatch
+User-- Blockchain : < batchInfoResp\ndivideResp
+Client-[#transparent]- SystemUnderStudy : > updateScript\ngetScript\npowerOn\npowerOff\nsetLcmOn\nsetLcmOff
+Client -- SystemUnderStudy : < scriptResp
+SystemUnderStudy -[#transparent]- SecureStorage : > getScript\nsetScript\ngetConfig\nsetConfig
+SystemUnderStudy -- SecureStorage : < scriptResp\nconfigResp\nwriteAck
+SystemUnderStudy -- SoCIPs : > setIPs
+
+Manufacturer -- Blockchain : > newBatch
+Manufacturer  -[#transparent]- Blockchain: < newBatchResp
+Manufacturer -- SystemUnderStudy : > provision
+Manufacturer -[#transparent]- SystemUnderStudy : < sendPK
+@enduml

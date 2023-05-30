@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="787px" preserveAspectRatio="none" style="width:959px;height:787px;" version="1.1" viewBox="0 0 959 787" width="959px" zoomAndPan="magnify"><defs/><g><!--MD5=[223850a2e22a0aa7f30073fece43398c]
+entity Manufacturer--><ellipse cx="504.87" cy="153" fill="#FEFECE" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M504.87,161 L504.87,188 M491.87,169 L517.87,169 M504.87,188 L491.87,203 M504.87,188 L517.87,203 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="91" x="459.37" y="218.4951">Manufacturer</text><!--MD5=[0ba5ee7700168656dc1b457c6fe9fdac]
+entity Client--><ellipse cx="797.87" cy="338" fill="#FEFECE" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M797.87,346 L797.87,373 M784.87,354 L810.87,354 M797.87,373 L784.87,388 M797.87,373 L810.87,388 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="39" x="778.37" y="403.4951">Client</text><!--MD5=[7e78dac9211a9957a4dd61202c37468b]
+entity Blockchain--><ellipse cx="227.87" cy="338" fill="#FEFECE" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M227.87,346 L227.87,373 M214.87,354 L240.87,354 M227.87,373 L214.87,388 M227.87,373 L240.87,388 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="190.37" y="403.4951">Blockchain</text><!--MD5=[1cc26f66063fd2eee5d00c93fa6c6406]
+entity SoCIPs--><ellipse cx="560.87" cy="714" fill="#FEFECE" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M560.87,722 L560.87,749 M547.87,730 L573.87,730 M560.87,749 L547.87,764 M560.87,749 L573.87,764 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="48" x="536.87" y="779.4951">SoCIPs</text><!--MD5=[fee662a292a0353a69bd162820bae93b]
+entity User--><ellipse cx="351.87" cy="14" fill="#FEFECE" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M351.87,22 L351.87,49 M338.87,30 L364.87,30 M351.87,49 L338.87,64 M351.87,49 L364.87,64 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="32" x="335.87" y="79.4951">User</text><!--MD5=[8ce4da07344163431fc4b2ae3b706b6d]
+class SystemUnderStudy--><rect codeLine="13" fill="#FEFECE" height="23.9688" id="SystemUnderStudy" style="stroke:#A80036;stroke-width:1.5;" width="124" x="591.87" y="558.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="118" x="594.87" y="574.6387">SystemUnderStudy</text><!--MD5=[aeaae7e1336b72af07314b3b2fa37b5d]
+entity SecureStorage--><ellipse cx="718.87" cy="714" fill="#FEFECE" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M718.87,722 L718.87,749 M705.87,730 L731.87,730 M718.87,749 L705.87,764 M718.87,749 L731.87,764 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="103" x="667.37" y="779.4951">SecureStorage</text><!--MD5=[32a968578bd3b30506c0dbf57dc30b3d]
+reverse link User to Manufacturer--><path codeLine="15" d="M382.87,72.25 C405.69,92.69 437.01,120.73 462.2,143.29 " fill="none" id="User-backto-Manufacturer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="378.19,77.46,367.96,58.9,387.53,67.03,378.19,77.46" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a605f9a646bac91c0f1ec4bed5c60b13]
+reverse link User to Client--><path codeLine="16" d="M388.13,44.15 C494.87,45.31 808.79,65.07 940.87,251.5 C952.95,268.54 952.03,280.84 940.87,298.5 C913.42,341.96 849.77,358.21 817.46,363.81 " fill="none" id="User-backto-Client" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="387.88,51.14,367.88,44.13,387.89,37.14,387.88,51.14" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d51c6eba96118fe621541f27cce58b31]
+link Manufacturer to Client--><path codeLine="17" d="M550.46,183.32 C606.61,185.58 701.57,197.82 758.87,251.5 C780.11,271.39 789.78,303.25 794.19,328.4 " fill="none" id="Manufacturer-Client" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="795.1664,262.6239,788.8973,255.472,785.8909,260.5228,795.1664,262.6239" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="133" x="798.87" y="264.5669">sendUidAndAccProof</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="64" x="826.87" y="279.6997">sendProof</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="93" x="812.37" y="294.8325">newScriptResp</text><!--MD5=[d51c6eba96118fe621541f27cce58b31]
+link Manufacturer to Client--><path codeLine="18" d="M550.46,207.93 C569.77,219.58 591.71,234.65 608.87,251.5 C626.91,269.2 621.4,282.4 640.87,298.5 C663.02,316.81 741.39,346.29 778.33,359.59 " fill="none" id="Manufacturer-Client-1" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="642.7076,264.7961,648.6091,272.2542,651.8658,267.361,642.7076,264.7961" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="95" x="654.87" y="272.0669">sendNewBatch</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="95" x="648.37" y="287.1997">sendNewScript</text><!--MD5=[acd5e599308ff2110d74b8dc41ec2b7d]
+link User to Blockchain--><path codeLine="21" d="M335.55,44.1 C284.33,43.83 126.3,50.83 59.87,143.5 C6,218.65 125.69,305.62 190.2,345.07 " fill="none" id="User-Blockchain" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="63.6956,179.5688,70.2756,172.7019,64.9827,170.1458,63.6956,179.5688" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="81" x="73.87" y="179.5669">getBatchInfo</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="70.87" y="194.6997">divideBatch</text><!--MD5=[acd5e599308ff2110d74b8dc41ec2b7d]
+link User to Blockchain--><path codeLine="22" d="M335.68,62.45 C306.3,96.38 245.18,173.54 222.87,251.5 C215.73,276.48 217.13,305.74 220.24,328.5 " fill="none" id="User-Blockchain-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="281.8602,170.4796,275.5638,177.6074,280.9559,179.9471,281.8602,170.4796" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="90" x="287.87" y="179.5669">batchInfoResp</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="68" x="292.37" y="194.6997">divideResp</text><!--MD5=[f4d86d1f57e19bcaa9f82c03757ca762]
+link Client to SystemUnderStudy--><path codeLine="23" d="M778.05,374.2 C751.3,382.98 704.21,402.45 679.87,436.5 C652.65,474.59 652.04,533.83 653.12,558.32 " fill="none" id="Client-SystemUnderStudy" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="683.0626,449.2039,690.5732,443.3693,685.7093,440.069,683.0626,449.2039" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="82" x="693.87" y="449.5669">updateScript</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="58" x="699.37" y="464.6997">getScript</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="56" x="700.37" y="479.8325">powerOn</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="56" x="700.37" y="494.9653">powerOff</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="695.87" y="510.0981">setLcmOn</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="695.87" y="525.231">setLcmOff</text><!--MD5=[f4d86d1f57e19bcaa9f82c03757ca762]
+link Client to SystemUnderStudy--><path codeLine="24" d="M804.62,406.5 C808.65,441.99 808.52,494.46 780.87,528.5 C765.02,548.01 739.8,558.35 715.99,563.78 " fill="none" id="Client-SystemUnderStudy-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="813.3247,478.2104,806.3237,484.6477,811.4445,487.5333,813.3247,478.2104" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="819.87" y="487.0669">scriptResp</text><!--MD5=[13c111500ffe321bc1040ba0cb4153d6]
+link SystemUnderStudy to SecureStorage--><path codeLine="25" d="M650.71,582.55 C645.74,602.01 637.93,643.26 650.87,674.5 C655.41,685.45 662.66,695.56 670.77,704.45 " fill="none" id="SystemUnderStudy-SecureStorage" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="657.6819,626.0001,659.1131,616.5978,653.3132,617.5522,657.6819,626.0001" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="58" x="664.87" y="625.5669">getScript</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="57" x="658.87" y="640.6997">setScript</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="656.87" y="655.8325">getConfig</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="60" x="657.37" y="670.9653">setConfig</text><!--MD5=[13c111500ffe321bc1040ba0cb4153d6]
+link SystemUnderStudy to SecureStorage--><path codeLine="26" d="M690.24,582.54 C704.59,588.88 719.6,598.45 727.87,612.5 C744.12,640.08 739.66,676.89 732.42,704.3 " fill="none" id="SystemUnderStudy-SecureStorage-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="743.2333,623.8419,743.4171,633.3507,748.9711,631.4266,743.2333,623.8419" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="752.87" y="633.0669">scriptResp</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="69" x="744.87" y="648.1997">configResp</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="53" x="752.87" y="663.3325">writeAck</text><!--MD5=[bb578e213c9469e3c0350e6300305e87]
+link SystemUnderStudy to SoCIPs--><path codeLine="27" d="M621.36,582.57 C607.06,589.09 591.39,598.79 581.87,612.5 C563.3,639.27 558.9,676.51 558.64,704.28 " fill="none" id="SystemUnderStudy-SoCIPs" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="584.5796,648.011,591.3354,641.3169,586.1105,638.6244,584.5796,648.011" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="38" x="595.87" y="648.0669">setIPs</text><!--MD5=[a048c0916d5a57412b7c595c1bafca6f]
+link Manufacturer to Blockchain--><path codeLine="29" d="M459.35,190.12 C394.97,200.41 282.03,222.13 253.87,251.5 C234.4,271.82 228.34,303.49 226.91,328.45 " fill="none" id="Manufacturer-Blockchain" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="254.5733,277.6235,263.8491,275.5232,260.8431,270.4722,254.5733,277.6235" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="62" x="267.87" y="279.5669">newBatch</text><!--MD5=[a048c0916d5a57412b7c595c1bafca6f]
+link Manufacturer to Blockchain--><path codeLine="30" d="M459.34,200.55 C431.89,212.23 397.26,229.57 370.87,251.5 C350.64,268.32 354.28,280.73 334.87,298.5 C314.02,317.61 287.14,334.66 265.54,346.92 " fill="none" id="Manufacturer-Blockchain-1" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="379.8599,272.053,370.8709,275.1591,374.4134,279.8495,379.8599,272.053" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="93" x="384.87" y="279.5669">newBatchResp</text><!--MD5=[61d491ccf78f84ef4fde0229b6ef3c84]
+link Manufacturer to SystemUnderStudy--><path codeLine="31" d="M498.94,221.78 C493.43,267.18 488.89,344.51 509.87,406.5 C531.39,470.07 551.66,480.8 598.87,528.5 C610.18,539.93 624.86,550.7 636.21,558.34 " fill="none" id="Manufacturer-SystemUnderStudy" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="516.7583,372.1961,516.0636,362.711,510.6211,364.9308,516.7583,372.1961" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="57" x="523.87" y="372.0669">provision</text><!--MD5=[61d491ccf78f84ef4fde0229b6ef3c84]
+link Manufacturer to SystemUnderStudy--><path codeLine="32" d="M529.44,221.64 C547.01,250.19 570.22,290.66 585.87,328.5 C621.1,413.67 644.62,523.05 651.66,558.14 " fill="none" id="Manufacturer-SystemUnderStudy-1" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="615.1631,362.8668,615.4886,372.3718,621.0133,370.3652,615.1631,362.8668" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="47" x="625.87" y="372.0669">sendPK</text><!--MD5=[1257723a70b74ef91e29f8934150f875]
+@startuml
+'left to right direction
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+hide empty members
+'hide fields
+allowmixing
+actor "Manufacturer" as Manufacturer
+actor "Client" as Client
+actor "Blockchain" as Blockchain 
+actor "SoCIPs" as SoCIPs 
+actor "User" as User 
+class "SystemUnderStudy" as SystemUnderStudy  {
+}
+User <|- - Manufacturer
+User <|- - Client
+Manufacturer - - Client : > sendUidAndAccProof\nsendProof\nnewScriptResp
+Manufacturer -[#transparent]- Client : < sendNewBatch\nsendNewScript
+
+actor "SecureStorage" as SecureStorage 
+User-[#transparent]- Blockchain : > getBatchInfo\ndivideBatch
+User- - Blockchain : < batchInfoResp\ndivideResp
+Client-[#transparent]- SystemUnderStudy : > updateScript\ngetScript\npowerOn\npowerOff\nsetLcmOn\nsetLcmOff
+Client - - SystemUnderStudy : < scriptResp
+SystemUnderStudy -[#transparent]- SecureStorage : > getScript\nsetScript\ngetConfig\nsetConfig
+SystemUnderStudy - - SecureStorage : < scriptResp\nconfigResp\nwriteAck
+SystemUnderStudy - - SoCIPs : > setIPs
+
+Manufacturer - - Blockchain : > newBatch
+Manufacturer  -[#transparent]- Blockchain: < newBatchResp
+Manufacturer - - SystemUnderStudy : > provision
+Manufacturer -[#transparent]- SystemUnderStudy : < sendPK
+@enduml
+
+@startuml
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+hide empty members
+allowmixing
+actor "Manufacturer" as Manufacturer
+actor "Client" as Client
+actor "Blockchain" as Blockchain 
+actor "SoCIPs" as SoCIPs 
+actor "User" as User 
+class "SystemUnderStudy" as SystemUnderStudy  {
+}
+User <|- - Manufacturer
+User <|- - Client
+Manufacturer - - Client : > sendUidAndAccProof\nsendProof\nnewScriptResp
+Manufacturer -[#transparent]- Client : < sendNewBatch\nsendNewScript
+
+actor "SecureStorage" as SecureStorage 
+User-[#transparent]- Blockchain : > getBatchInfo\ndivideBatch
+User- - Blockchain : < batchInfoResp\ndivideResp
+Client-[#transparent]- SystemUnderStudy : > updateScript\ngetScript\npowerOn\npowerOff\nsetLcmOn\nsetLcmOff
+Client - - SystemUnderStudy : < scriptResp
+SystemUnderStudy -[#transparent]- SecureStorage : > getScript\nsetScript\ngetConfig\nsetConfig
+SystemUnderStudy - - SecureStorage : < scriptResp\nconfigResp\nwriteAck
+SystemUnderStudy - - SoCIPs : > setIPs
+
+Manufacturer - - Blockchain : > newBatch
+Manufacturer  -[#transparent]- Blockchain: < newBatchResp
+Manufacturer - - SystemUnderStudy : > provision
+Manufacturer -[#transparent]- SystemUnderStudy : < sendPK
+@enduml
+
+PlantUML version 1.2020.22(Sun Dec 06 09:36:27 UTC 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

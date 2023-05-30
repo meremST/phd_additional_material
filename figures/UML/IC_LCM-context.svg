@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="786px" preserveAspectRatio="none" style="width:750px;height:786px;" version="1.1" viewBox="0 0 750 786" width="750px" zoomAndPan="magnify"><defs/><g><!--MD5=[7e78dac9211a9957a4dd61202c37468b]
+entity Blockchain--><ellipse cx="101.0735" cy="244" fill="#FEFECE" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M101.0735,252 L101.0735,279 M88.0735,260 L114.0735,260 M101.0735,279 L88.0735,294 M101.0735,279 L114.0735,294 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="63.5735" y="309.4951">Blockchain</text><!--MD5=[fee662a292a0353a69bd162820bae93b]
+entity User--><ellipse cx="241.0734" cy="14" fill="#FEFECE" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M241.0734,22 L241.0734,49 M228.0734,30 L254.0734,30 M241.0734,49 L228.0734,64 M241.0734,49 L254.0734,64 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="32" x="225.0734" y="79.4951">User</text><!--MD5=[f3b0b77769bbb37661acbcb953844133]
+class iface--><rect codeLine="13" fill="#FEFECE" height="37.9375" id="iface" style="stroke:#A80036;stroke-width:1.5;" width="131" x="316.5734" y="254.5"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="51" x="356.5734" y="270.6387">«active»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="125" x="319.5734" y="284.6074">iface : ChipInterface</text><!--MD5=[f5e7ee3b479df05c99880ad25cfdce2c]
+class manager--><rect codeLine="15" fill="#FEFECE" height="37.9375" id="manager" style="stroke:#A80036;stroke-width:1.5;" width="209" x="405.5734" y="434.5"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="51" x="484.5734" y="450.6387">«active»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="203" x="408.5734" y="464.6074">manager : ChipLifeCycleManager</text><!--MD5=[6a75b883f0561f37ccbed81a3d473587]
+class ipCtrlr--><rect codeLine="17" fill="#FEFECE" height="37.9375" id="ipCtrlr" style="stroke:#A80036;stroke-width:1.5;" width="188" x="252.0734" y="584"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="51" x="320.5734" y="600.1387">«active»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="182" x="255.0734" y="614.1074">ipCtrlr : IPActivationController</text><!--MD5=[aeaae7e1336b72af07314b3b2fa37b5d]
+entity SecureStorage--><ellipse cx="515.0734" cy="713" fill="#FEFECE" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M515.0734,721 L515.0734,748 M502.0734,729 L528.0734,729 M515.0734,748 L502.0734,763 M515.0734,748 L528.0734,763 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="103" x="463.5734" y="778.4951">SecureStorage</text><!--MD5=[c2b2b4926384e92928c157fa4a5475d9]
+class sClk--><rect codeLine="21" fill="#FEFECE" height="37.9375" id="sClk" style="stroke:#A80036;stroke-width:1.5;" width="172" x="571.0734" y="254.5"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="51" x="631.5734" y="270.6387">«active»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="166" x="574.0734" y="284.6074">sClk : SecureTimingSystem</text><!--MD5=[1cc26f66063fd2eee5d00c93fa6c6406]
+entity SoCIPs--><ellipse cx="253.0734" cy="713" fill="#FEFECE" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M253.0734,721 L253.0734,748 M240.0734,729 L266.0734,729 M253.0734,748 L240.0734,763 M253.0734,748 L266.0734,763 " fill="none" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="48" x="229.0734" y="778.4951">SoCIPs</text><!--MD5=[acd5e599308ff2110d74b8dc41ec2b7d]
+link User to Blockchain--><path codeLine="25" d="M224.8184,43.928 C183.8854,43.485 76.5255,48.725 30.0735,112.5 C6,145.551 14.0193,166.895 30.0735,204.5 C37.1099,220.982 50.3184,235.383 63.4523,246.638 " fill="none" id="User-Blockchain" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="32.9595,154.9783,40.8921,149.732,36.2934,146.0712,32.9595,154.9783" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="81" x="44.0735" y="155.5669">getBatchInfo</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="41.0735" y="170.6997">divideBatch</text><!--MD5=[acd5e599308ff2110d74b8dc41ec2b7d]
+link User to Blockchain--><path codeLine="26" d="M225.0094,55.564 C208.2954,67.796 182.3364,88.914 166.0734,112.5 C141.1494,148.648 146.6874,163.857 130.0734,204.5 C126.0914,214.242 121.6844,224.719 117.5344,234.462 " fill="none" id="User-Blockchain-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="174.6483,146.7804,167.471,153.0204,172.5095,156.0473,174.6483,146.7804" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="90" x="180.0734" y="155.5669">batchInfoResp</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="68" x="184.5734" y="170.6997">divideResp</text><!--MD5=[3f7c15a587e53bd97823def1ab272672]
+link User to iface--><path codeLine="27" d="M257.2444,75.361 C263.0964,86.904 269.6044,100.198 275.0734,112.5 C292.9094,152.622 286.6454,168.015 311.0734,204.5 C323.9874,223.788 343.2184,241.774 358.4104,254.398 " fill="none" id="User-iface" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="319.5331,125.4195,317.6421,116.0989,312.5247,118.9905,319.5331,125.4195" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="82" x="325.0734" y="125.5669">updateScript</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="58" x="330.5734" y="140.6997">getScript</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="56" x="331.5734" y="155.8325">powerOn</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="56" x="331.5734" y="170.9653">powerOff</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="327.0734" y="186.0981">setLcmOn</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="327.0734" y="201.231">setLcmOff</text><!--MD5=[3f7c15a587e53bd97823def1ab272672]
+link User to iface--><path codeLine="28" d="M257.1554,45.267 C292.4284,47.922 376.2874,59.757 412.0734,112.5 C442.0644,156.701 411.4194,222.846 393.3254,254.441 " fill="none" id="User-iface-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="426.3455,154.3761,428.8173,163.5598,433.7433,160.3531,426.3455,154.3761" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="438.0734" y="163.0669">scriptResp</text><!--MD5=[356fe10abfe5cecbc809fd593a15dc02]
+link iface to manager--><path codeLine="29" d="M353.7154,292.511 C337.6334,304.495 318.9894,321.816 310.0734,342.5 C299.1664,367.805 293.0134,382.861 310.0734,404.5 C322.6754,420.484 363.7134,431.75 405.3644,439.332 " fill="none" id="iface-manager" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="317.7326,355.7831,317.5034,346.2753,311.9587,348.2258,317.7326,355.7831" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="82" x="324.0734" y="355.5669">updateScript</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="58" x="329.5734" y="370.6997">getScript</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="56" x="330.5734" y="385.8325">powerOn</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="56" x="330.5734" y="400.9653">powerOff</text><!--MD5=[356fe10abfe5cecbc809fd593a15dc02]
+link iface to manager--><path codeLine="30" d="M389.9744,292.779 C403.6834,324.029 431.8644,386.135 447.0734,404.5 C456.5454,415.937 469.2384,426.267 480.7484,434.389 " fill="none" id="iface-manager-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="449.3751,369.357,451.7821,378.5579,456.7306,375.3859,449.3751,369.357" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="461.0734" y="378.0669">scriptResp</text><!--MD5=[309794710895fce8c4d537d30c5742ea]
+link manager to SecureStorage--><path codeLine="31" d="M528.8084,472.839 C535.9844,481.141 543.3414,491.544 547.0734,502.5 C570.2934,570.658 547.8664,655.117 530.6484,703.2051 " fill="none" id="manager-SecureStorage" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="562.1133,593.0662,564.9799,583.998,559.1022,584.0449,562.1133,593.0662" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="58" x="570.0734" y="592.5669">getScript</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="57" x="564.0734" y="607.6997">setScript</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="60" x="562.5734" y="622.8325">setConfig</text><!--MD5=[309794710895fce8c4d537d30c5742ea]
+link manager to SecureStorage--><path codeLine="32" d="M540.8104,472.546 C572.8124,493.482 620.5354,531.371 637.0734,579.5 C643.8614,599.255 645.3514,607.321 637.0734,626.5 C622.5974,660.039 592.9944,688.3318 566.5754,708.4619 " fill="none" id="manager-SecureStorage-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="647.5306,590.596,645.591,599.9067,651.4341,599.2685,647.5306,590.596" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="656.0734" y="600.0669">scriptResp</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="53" x="656.0734" y="615.1997">writeAck</text><!--MD5=[8595c13068dccf98203838dab532bda5]
+link sClk to manager--><path codeLine="33" d="M627.1614,292.553 C608.4914,304.903 584.8954,322.601 568.0734,342.5 C555.3204,357.586 531.1624,407.314 518.4214,434.448 " fill="none" id="sClk-manager" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="570.032,377.5351,577.8666,372.1434,573.2012,368.568,570.032,377.5351" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="50" x="582.0734" y="378.0669">wakeUp</text><!--MD5=[8595c13068dccf98203838dab532bda5]
+link sClk to manager--><path codeLine="34" d="M659.5854,292.714 C662.3094,320.127 663.2394,372.212 637.0734,404.5 C626.2404,417.868 611.2584,427.515 595.3744,434.477 " fill="none" id="sClk-manager-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="667.1364,361.5118,660.7273,368.5385,666.0815,370.9637,667.1364,361.5118" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="58" x="673.0734" y="370.5669">setAlarm</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="662.5734" y="385.6997">stopAlarm</text><!--MD5=[02b006730063fd3148694737e08c58a7]
+link ipCtrlr to SecureStorage--><path codeLine="35" d="M339.7174,622.174 C335.6674,637.233 332.8874,658.519 343.0734,673.5 C369.7954,712.7986 423.1074,729.3857 463.3334,736.3868 " fill="none" id="ipCtrlr-SecureStorage" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="351.7458,668.4595,347.0967,660.1627,343.1079,664.4799,351.7458,668.4595" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="357.0734" y="669.5669">getConfig</text><!--MD5=[02b006730063fd3148694737e08c58a7]
+link ipCtrlr to SecureStorage--><path codeLine="36" d="M374.9484,622.231 C389.7144,631.914 407.7544,644.31 423.0734,656.5 C441.2804,670.988 460.3394,688.2145 476.3584,703.3589 " fill="none" id="ipCtrlr-SecureStorage-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="442.169,661.9429,447.3961,669.8883,451.068,665.2984,442.169,661.9429" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="69" x="455.0734" y="669.5669">configResp</text><!--MD5=[b42ca660664e4bbdb235e0d0186d2735]
+link manager to ipCtrlr--><path codeLine="37" d="M405.4344,467.344 C362.9924,474.9 320.9244,486.238 308.0734,502.5 C288.6984,527.019 311.4654,562.528 329.1774,583.831 " fill="none" id="manager-ipCtrlr" style="stroke:#FFFFFF;stroke-width:1.0;"/><polygon fill="#000000" points="311.3348,515.2497,318.7478,509.2917,313.83,506.0723,311.3348,515.2497" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="85" x="322.0734" y="515.5669">updateConfig</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="56" x="330.0734" y="530.6997">powerOn</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="56" x="330.0734" y="545.8325">powerOff</text><!--MD5=[b42ca660664e4bbdb235e0d0186d2735]
+link manager to ipCtrlr--><path codeLine="38" d="M483.4984,472.717 C472.0374,481.153 458.8264,491.691 448.0734,502.5 C429.5164,521.154 430.5084,530.725 412.0734,549.5 C399.7644,562.037 384.4934,574.356 371.7414,583.907 " fill="none" id="manager-ipCtrlr-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="456.6179,522.5399,448.133,526.836,452.2787,531.0028,456.6179,522.5399" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="462.0734" y="530.5669">ipConfigured</text><!--MD5=[a19d4a364491d51666d335fc1c5765f7]
+link ipCtrlr to SoCIPs--><path codeLine="39" d="M290.3384,622.011 C274.5424,629.982 259.1804,641.14 250.0734,656.5 C241.8654,670.345 241.1904,687.8093 243.1224,703.3015 " fill="none" id="ipCtrlr-SoCIPs" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="252.5621,669.39,259.6464,663.0446,254.5637,660.0925,252.5621,669.39" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="38" x="264.0734" y="669.5669">setIPs</text><!--MD5=[54b13cfa779e5ea49686bbd1937c072a]
+@startuml
+
+'left to right direction
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+hide empty members
+'hide fields
+allowmixing
+actor "Blockchain" as Blockchain 
+
+actor "User" as User 
+
+class "iface : ChipInterface" as iface <<active>> {
+}
+class "manager : ChipLifeCycleManager" as manager <<active>> {
+}
+class "ipCtrlr : IPActivationController" as ipCtrlr <<active>> {
+}
+actor "SecureStorage" as SecureStorage 
+
+class "sClk : SecureTimingSystem" as sClk <<active>> {
+}
+actor "SoCIPs" as SoCIPs 
+
+User -[#transparent]- Blockchain : > getBatchInfo\ndivideBatch
+User - - Blockchain : < batchInfoResp\ndivideResp
+User -[#transparent]- iface : > updateScript\ngetScript\npowerOn\npowerOff\nsetLcmOn\nsetLcmOff
+User - - iface : < scriptResp
+iface -[#transparent]- manager : > updateScript\ngetScript\npowerOn\npowerOff
+iface - - manager : < scriptResp
+manager -[#transparent]- SecureStorage : > getScript\nsetScript\nsetConfig
+manager - - SecureStorage : < scriptResp\nwriteAck
+sClk -[#transparent]- manager : > wakeUp
+sClk - - manager : < setAlarm\nstopAlarm
+ipCtrlr -[#transparent]- SecureStorage : > getConfig
+ipCtrlr - - SecureStorage : < configResp
+manager -[#transparent]- ipCtrlr : > updateConfig\npowerOn\npowerOff
+manager - - ipCtrlr : < ipConfigured
+ipCtrlr - - SoCIPs : > setIPs
+@enduml
+
+@startuml
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+hide empty members
+allowmixing
+actor "Blockchain" as Blockchain 
+
+actor "User" as User 
+
+class "iface : ChipInterface" as iface <<active>> {
+}
+class "manager : ChipLifeCycleManager" as manager <<active>> {
+}
+class "ipCtrlr : IPActivationController" as ipCtrlr <<active>> {
+}
+actor "SecureStorage" as SecureStorage 
+
+class "sClk : SecureTimingSystem" as sClk <<active>> {
+}
+actor "SoCIPs" as SoCIPs 
+
+User -[#transparent]- Blockchain : > getBatchInfo\ndivideBatch
+User - - Blockchain : < batchInfoResp\ndivideResp
+User -[#transparent]- iface : > updateScript\ngetScript\npowerOn\npowerOff\nsetLcmOn\nsetLcmOff
+User - - iface : < scriptResp
+iface -[#transparent]- manager : > updateScript\ngetScript\npowerOn\npowerOff
+iface - - manager : < scriptResp
+manager -[#transparent]- SecureStorage : > getScript\nsetScript\nsetConfig
+manager - - SecureStorage : < scriptResp\nwriteAck
+sClk -[#transparent]- manager : > wakeUp
+sClk - - manager : < setAlarm\nstopAlarm
+ipCtrlr -[#transparent]- SecureStorage : > getConfig
+ipCtrlr - - SecureStorage : < configResp
+manager -[#transparent]- ipCtrlr : > updateConfig\npowerOn\npowerOff
+manager - - ipCtrlr : < ipConfigured
+ipCtrlr - - SoCIPs : > setIPs
+@enduml
+
+PlantUML version 1.2020.21(Mon Nov 30 17:40:11 CET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

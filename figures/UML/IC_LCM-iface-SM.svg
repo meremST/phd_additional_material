@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="910px" preserveAspectRatio="none" style="width:821px;height:910px;" version="1.1" viewBox="0 0 821 910" width="821px" zoomAndPan="magnify"><defs><filter height="300%" id="f4ib2lj9927fc" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="408.5" cy="16" fill="#000000" filter="url(#f4ib2lj9927fc)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><rect fill="#FEFECE" filter="url(#f4ib2lj9927fc)" height="812.4375" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="802.8176" x="7" y="86"/><rect fill="#FFFFFF" height="780.1406" rx="12.5" ry="12.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="796.8176" x="10" y="115.2969"/><line style="stroke:#A80036;stroke-width:1.5;" x1="7" x2="809.8176" y1="112.2969" y2="112.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="71" x="372.9088" y="103.9951">icInterface</text><polygon fill="#FEFECE" filter="url(#f4ib2lj9927fc)" points="286.8176,123.2969,298.8176,135.2969,286.8176,147.2969,274.8176,135.2969,286.8176,123.2969" style="stroke:#A80036;stroke-width:1.5;"/><g id="iface.icInterface.iface.icInterface.pOnLcmOn"><rect fill="#FEFECE" filter="url(#f4ib2lj9927fc)" height="78.2031" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="97" x="367.3176" y="323.2969"/><line style="stroke:#A80036;stroke-width:1.5;" x1="367.3176" x2="464.3176" y1="349.5938" y2="349.5938"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="77" x="377.3176" y="341.292">pOnLcmOn</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="71" x="372.3176" y="365.7324">setLcmOn()</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="71" x="372.3176" y="379.7012">setLcmOff()</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="372.3176" y="393.6699">powerOn()</text></g><g id="iface.icInterface.iface.icInterface.pOnLcmOff"><rect fill="#FEFECE" filter="url(#f4ib2lj9927fc)" height="106.1406" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="117" x="358.3176" y="774.2969"/><line style="stroke:#A80036;stroke-width:1.5;" x1="358.3176" x2="475.3176" y1="800.5938" y2="800.5938"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="76" x="378.8176" y="792.292">pOnLcmOff</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="97" x="363.3176" y="816.7324">updateScript(_)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="67" x="363.3176" y="830.7012">getScript()</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="71" x="363.3176" y="844.6699">setLcmOn()</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="71" x="363.3176" y="858.6387">setLcmOff()</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="363.3176" y="872.6074">powerOn()</text></g><g id="iface.icInterface.iface.icInterface.pOffLcmOff"><rect fill="#FEFECE" filter="url(#f4ib2lj9927fc)" height="92.1719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="117" x="358.3176" y="614.2969"/><line style="stroke:#A80036;stroke-width:1.5;" x1="358.3176" x2="475.3176" y1="640.5938" y2="640.5938"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="379.3176" y="632.292">pOffLcmOff</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="97" x="363.3176" y="656.7324">updateScript(_)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="67" x="363.3176" y="670.7012">getScript()</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="363.3176" y="684.6699">powerOff()</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="71" x="363.3176" y="698.6387">setLcmOff()</text></g><g id="iface.icInterface.iface.icInterface.pOffLcmOn"><rect fill="#FEFECE" filter="url(#f4ib2lj9927fc)" height="92.1719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="117" x="258.3176" y="469.2969"/><line style="stroke:#A80036;stroke-width:1.5;" x1="258.3176" x2="375.3176" y1="495.5938" y2="495.5938"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="76" x="278.8176" y="487.292">pOffLcmOn</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="97" x="263.3176" y="511.7324">updateScript(_)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="67" x="263.3176" y="525.7012">getScript()</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="263.3176" y="539.6699">powerOff()</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="71" x="263.3176" y="553.6387">setLcmOn()</text></g><rect fill="#FEFECE" filter="url(#f4ib2lj9927fc)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="133" x="449.3176" y="495.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="123" x="454.3176" y="520.1436">waitingScriptResp</text><rect fill="#FEFECE" filter="url(#f4ib2lj9927fc)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="147" x="213.3176" y="215.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="137" x="218.3176" y="240.1436">waitingScriptUpdate</text><ellipse cx="610.8176" cy="515.2969" fill="#000000" filter="url(#f4ib2lj9927fc)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><!--MD5=[a1344bb85418c9e21d9349f3905e149a]
+link *start*iface.icInterface to iface.icInterface.pOffLcmOff--><path d="M608.9046,525.1819 C606.4066,534.9989 601.2046,550.8059 591.8176,561.2969 C561.7076,594.9489 517.1976,619.6539 480.6026,635.8419 " fill="none" id="*start*iface.icInterface-to-iface.icInterface.pOffLcmOff" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="475.7236,637.9709,485.5722,638.0372,480.3062,635.971,482.3724,630.705,475.7236,637.9709" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2b32afc3aa7f44db370a14877711308a]
+link iface.icInterface.pOffLcmOff to iface.icInterface.pOnLcmOff--><path d="M358.2976,684.9199 C341.9266,694.5689 326.0876,707.4999 316.8176,724.2969 C301.8036,751.5009 325.4416,776.5099 353.4926,794.9556 " fill="none" id="iface.icInterface.pOffLcmOff-to-iface.icInterface.pOnLcmOff" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="358.0276,797.859,352.6044,789.6377,353.8166,795.1632,348.2911,796.3753,358.0276,797.859" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="70" x="371.8176" y="737.3638">powerOn()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="162" x="333.8176" y="752.4966">manager.powerOn(false);</text><!--MD5=[1a1288fcb5230fa31c2219aab17de936]
+link iface.icInterface.pOnLcmOff to iface.icInterface.pOffLcmOff--><path d="M475.6866,785.786 C484.2636,777.1099 491.8606,767.2209 496.8176,756.2969 C502.6946,743.3459 503.0276,737.0919 496.8176,724.2969 C492.5836,715.5749 486.4926,707.6979 479.5336,700.7049 " fill="none" id="iface.icInterface.pOnLcmOff-to-iface.icInterface.pOffLcmOff" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="475.5846,696.9109,479.3033,706.0307,479.1901,700.375,484.8459,700.2619,475.5846,696.9109" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="70" x="540.8176" y="737.3638">powerOff()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="132" x="517.8176" y="752.4966">manager.powerOff();</text><!--MD5=[a92da7548e89d2dd501812862d18c7b8]
+link iface.icInterface.pOffLcmOff to iface.icInterface.pOffLcmOn--><path d="M409.5776,614.0249 C406.3146,602.0879 401.6046,589.6599 394.8176,579.2969 C390.3946,572.5439 385.0146,566.1699 379.1686,560.2599 " fill="none" id="iface.icInterface.pOffLcmOff-to-iface.icInterface.pOffLcmOn" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="375.4736,556.6409,379.1055,565.7956,379.0461,560.1391,384.7026,560.0797,375.4736,556.6409" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="75" x="404.8176" y="592.3638">setLcmOn()</text><!--MD5=[79008b240d9f2388a14b9e5c69f932d3]
+link iface.icInterface.pOffLcmOn to iface.icInterface.pOffLcmOff--><path d="M306.8736,561.4849 C306.3936,573.4209 307.9726,585.8709 313.8176,596.2969 C322.8586,612.4249 337.8976,624.9189 353.7276,634.3669 " fill="none" id="iface.icInterface.pOffLcmOn-to-iface.icInterface.pOffLcmOff" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="358.2096,636.9519,352.4124,628.99,353.8785,634.4535,348.415,635.9197,358.2096,636.9519" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="75" x="314.8176" y="592.3638">setLcmOff()</text><!--MD5=[4696a5cbbbccb9b767218926325127bd]
+link iface.icInterface.pOffLcmOn to iface.icInterface.pOnLcmOn--><path d="M308.2676,469.2369 C307.3356,452.5399 309.1296,434.0879 317.8176,419.2969 C327.7966,402.3079 345.0546,390.0259 362.3336,381.3729 " fill="none" id="iface.icInterface.pOffLcmOn-to-iface.icInterface.pOnLcmOn" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="367.2026,379.0279,357.3583,379.3279,362.6975,381.1968,360.8286,386.536,367.2026,379.0279" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="70" x="370.8176" y="432.3638">powerOn()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="158" x="334.8176" y="447.4966">manager.powerOn(true);</text><!--MD5=[51401fbd8e69807f0e3d4ad1651354d7]
+link iface.icInterface.pOnLcmOn to iface.icInterface.pOffLcmOn--><path d="M367.1146,366.6199 C299.0896,372.3909 180.9986,386.9029 154.8176,419.2969 C121.7273,460.2399 194.8196,487.3269 253.3176,501.7499 " fill="none" id="iface.icInterface.pOnLcmOn-to-iface.icInterface.pOffLcmOn" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="258.2136,502.9359,250.4085,496.9291,253.3542,501.7585,248.5248,504.7042,258.2136,502.9359" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="70" x="194.8176" y="432.3638">powerOff()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="132" x="171.8176" y="447.4966">manager.powerOff();</text><!--MD5=[35fc530bce945b67c0f5eb2fe72a7d13]
+link iface.icInterface.pOnLcmOn to iface.icInterface.waitingScriptResp--><path d="M464.4296,389.9759 C475.5096,398.0879 486.2366,407.9219 493.8176,419.2969 C508.0116,440.5959 513.1136,469.8719 514.9116,490.2739 " fill="none" id="iface.icInterface.pOnLcmOn-to-iface.icInterface.waitingScriptResp" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="515.3016,495.2589,518.5873,485.9743,514.9116,490.2741,510.6117,486.5983,515.3016,495.2589" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="72" x="546.8176" y="432.3638">getScript()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="134" x="523.8176" y="447.4966">manager.getScript();</text><!--MD5=[ec444347009274b1819c8b789f489c8d]
+link iface.icInterface.waitingScriptResp to iface.icInterface.pOnLcmOn--><path d="M543.6806,495.1839 C557.6386,486.2999 575.0916,476.1999 591.8176,469.2969 C621.9086,456.8769 642.8256,476.9889 662.8176,451.2969 C671.5516,440.0719 671.6926,430.4099 662.8176,419.2969 C639.0826,389.5789 534.6346,374.4529 469.3966,367.7679 " fill="none" id="iface.icInterface.waitingScriptResp-to-iface.icInterface.pOnLcmOn" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="464.3796,367.2629,472.933,372.1454,469.3544,367.7644,473.7354,364.1857,464.3796,367.2629" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="694.8176" y="432.3638">scriptResp()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="114" x="685.8176" y="447.4966">User.scriptResp();</text><!--MD5=[5c8ac17c737609f86e2d8a8792151e12]
+link iface.icInterface.pOnLcmOn to iface.icInterface.choiceUpdate--><path d="M464.4716,335.6949 C475.3846,327.5159 485.5706,317.3809 491.8176,305.2969 C538.6666,214.6759 508.5646,182.2539 493.8176,165.2969 C469.0466,136.8139 347.8276,135.4729 303.2806,135.9699 " fill="none" id="iface.icInterface.pOnLcmOn-to-iface.icInterface.choiceUpdate" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="298.2396,136.0379,307.2936,139.914,303.2391,135.9693,307.1839,131.9148,298.2396,136.0379" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="143" x="517.8176" y="239.8638">updateScript(success)</text><!--MD5=[03c3230db563d4573907a58314b8076a]
+link iface.icInterface.choiceUpdate to iface.icInterface.waitingScriptUpdate--><path d="M275.3416,135.9019 C233.6296,134.7359 91.0342,133.1919 62.8174,165.2969 C18,216.2909 126.7358,230.1239 207.9166,233.5749 " fill="none" id="iface.icInterface.choiceUpdate-to-iface.icInterface.waitingScriptUpdate" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="213.2216,233.7869,204.3888,229.4302,208.2256,233.5869,204.0688,237.4238,213.2216,233.7869" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="121" x="103.3174" y="178.3638">[success == true]/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="184" x="79.8174" y="193.4966">manager.updateScript(true);</text><!--MD5=[03c3230db563d4573907a58314b8076a]
+link iface.icInterface.choiceUpdate to iface.icInterface.waitingScriptUpdate--><path d="M286.8176,147.5389 C286.8176,162.6769 286.8176,190.0139 286.8176,209.9669 " fill="none" id="iface.icInterface.choiceUpdate-to-iface.icInterface.waitingScriptUpdate-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="286.8176,215.1249,290.8176,206.1249,286.8176,210.1249,282.8176,206.1249,286.8176,215.1249" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="40" x="369.8176" y="178.3638">[else]/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="188" x="303.8176" y="193.4966">manager.updateScript(false);</text><!--MD5=[a1fed3f52fe0ab691e32fdcdec0b690c]
+link iface.icInterface.waitingScriptUpdate to iface.icInterface.pOnLcmOn--><path d="M306.6906,255.5539 C324.1956,272.5159 350.2996,297.8109 372.5886,319.4089 " fill="none" id="iface.icInterface.waitingScriptUpdate-to-iface.icInterface.pOnLcmOn" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="376.4166,323.1179,372.7367,313.9823,372.8258,319.6385,367.1696,319.7276,376.4166,323.1179" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="381.8176" y="286.3638">scriptResp()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="114" x="372.8176" y="301.4966">User.scriptResp();</text><!--MD5=[06a136fa0e6e42ef4651b01d82e84a24]
+link *start to iface.icInterface--><path d="M408.5,26.046 C408.5,36.605 408.5,55.833 408.5,80.662 " fill="none" id="*start-to-iface.icInterface" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="408.5,85.702,412.5,76.702,408.5,80.702,404.5,76.702,408.5,85.702" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[01cee78557f927cbbde783ab85fba15a]
+@startuml
+'left to right direction
+
+hide empty description
+
+
+
+
+	
+	
+				
+				
+				
+				
+				
+				state "icInterface" as iface.icInterface  {
+					
+	
+	
+				state iface.icInterface.choiceUpdate <<choice>>
+				
+				
+				
+				
+				
+					iface.icInterface.pOnLcmOn : setLcmOn()
+					iface.icInterface.pOnLcmOn : setLcmOff()
+					iface.icInterface.pOnLcmOn : powerOn()
+				
+				state "pOnLcmOn" as iface.icInterface.pOnLcmOn  
+				
+				
+			
+				
+				
+				
+				
+					iface.icInterface.pOnLcmOff : updateScript(_)
+					iface.icInterface.pOnLcmOff : getScript()
+					iface.icInterface.pOnLcmOff : setLcmOn()
+					iface.icInterface.pOnLcmOff : setLcmOff()
+					iface.icInterface.pOnLcmOff : powerOn()
+				
+				state "pOnLcmOff" as iface.icInterface.pOnLcmOff  
+				
+				
+			
+				
+				
+				
+				
+					iface.icInterface.pOffLcmOff : updateScript(_)
+					iface.icInterface.pOffLcmOff : getScript()
+					iface.icInterface.pOffLcmOff : powerOff()
+					iface.icInterface.pOffLcmOff : setLcmOff()
+				
+				state "pOffLcmOff" as iface.icInterface.pOffLcmOff  
+				
+				
+			
+				
+				
+				
+				
+					iface.icInterface.pOffLcmOn : updateScript(_)
+					iface.icInterface.pOffLcmOn : getScript()
+					iface.icInterface.pOffLcmOn : powerOff()
+					iface.icInterface.pOffLcmOn : setLcmOn()
+				
+				state "pOffLcmOn" as iface.icInterface.pOffLcmOn  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "waitingScriptResp" as iface.icInterface.waitingScriptResp  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "waitingScriptUpdate" as iface.icInterface.waitingScriptUpdate  
+				
+				
+			
+	
+				[*] - -> iface.icInterface.pOffLcmOff 
+				
+				iface.icInterface.pOffLcmOff - -> iface.icInterface.pOnLcmOff : powerOn()/\n    manager.powerOn(false);
+				
+				iface.icInterface.pOnLcmOff - -> iface.icInterface.pOffLcmOff : powerOff()/\n    manager.powerOff();
+				
+				iface.icInterface.pOffLcmOff - -> iface.icInterface.pOffLcmOn : setLcmOn()
+				
+				iface.icInterface.pOffLcmOn - -> iface.icInterface.pOffLcmOff : setLcmOff()
+				
+				iface.icInterface.pOffLcmOn - -> iface.icInterface.pOnLcmOn : powerOn()/\n    manager.powerOn(true);
+				
+				iface.icInterface.pOnLcmOn - -> iface.icInterface.pOffLcmOn : powerOff()/\n    manager.powerOff();
+				
+				iface.icInterface.pOnLcmOn - -> iface.icInterface.waitingScriptResp : getScript()/\n    manager.getScript();
+				
+				iface.icInterface.waitingScriptResp - -> iface.icInterface.pOnLcmOn : scriptResp()/\n    User.scriptResp();
+				
+				iface.icInterface.pOnLcmOn - -> iface.icInterface.choiceUpdate : updateScript(success)
+				
+				iface.icInterface.choiceUpdate - -> iface.icInterface.waitingScriptUpdate : [success == true]/\n    manager.updateScript(true);
+				
+				iface.icInterface.choiceUpdate - -> iface.icInterface.waitingScriptUpdate : [else]/\n    manager.updateScript(false);
+				
+				iface.icInterface.waitingScriptUpdate - -> iface.icInterface.pOnLcmOn : scriptResp()/\n    User.scriptResp();
+				
+
+				}
+				
+				
+			
+	
+				[*] - -> iface.icInterface 
+				
+
+@enduml
+
+@startuml
+
+hide empty description
+
+
+
+
+	
+	
+				
+				
+				
+				
+				
+				state "icInterface" as iface.icInterface  {
+					
+	
+	
+				state iface.icInterface.choiceUpdate <<choice>>
+				
+				
+				
+				
+				
+					iface.icInterface.pOnLcmOn : setLcmOn()
+					iface.icInterface.pOnLcmOn : setLcmOff()
+					iface.icInterface.pOnLcmOn : powerOn()
+				
+				state "pOnLcmOn" as iface.icInterface.pOnLcmOn  
+				
+				
+			
+				
+				
+				
+				
+					iface.icInterface.pOnLcmOff : updateScript(_)
+					iface.icInterface.pOnLcmOff : getScript()
+					iface.icInterface.pOnLcmOff : setLcmOn()
+					iface.icInterface.pOnLcmOff : setLcmOff()
+					iface.icInterface.pOnLcmOff : powerOn()
+				
+				state "pOnLcmOff" as iface.icInterface.pOnLcmOff  
+				
+				
+			
+				
+				
+				
+				
+					iface.icInterface.pOffLcmOff : updateScript(_)
+					iface.icInterface.pOffLcmOff : getScript()
+					iface.icInterface.pOffLcmOff : powerOff()
+					iface.icInterface.pOffLcmOff : setLcmOff()
+				
+				state "pOffLcmOff" as iface.icInterface.pOffLcmOff  
+				
+				
+			
+				
+				
+				
+				
+					iface.icInterface.pOffLcmOn : updateScript(_)
+					iface.icInterface.pOffLcmOn : getScript()
+					iface.icInterface.pOffLcmOn : powerOff()
+					iface.icInterface.pOffLcmOn : setLcmOn()
+				
+				state "pOffLcmOn" as iface.icInterface.pOffLcmOn  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "waitingScriptResp" as iface.icInterface.waitingScriptResp  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "waitingScriptUpdate" as iface.icInterface.waitingScriptUpdate  
+				
+				
+			
+	
+				[*] - -> iface.icInterface.pOffLcmOff 
+				
+				iface.icInterface.pOffLcmOff - -> iface.icInterface.pOnLcmOff : powerOn()/\n    manager.powerOn(false);
+				
+				iface.icInterface.pOnLcmOff - -> iface.icInterface.pOffLcmOff : powerOff()/\n    manager.powerOff();
+				
+				iface.icInterface.pOffLcmOff - -> iface.icInterface.pOffLcmOn : setLcmOn()
+				
+				iface.icInterface.pOffLcmOn - -> iface.icInterface.pOffLcmOff : setLcmOff()
+				
+				iface.icInterface.pOffLcmOn - -> iface.icInterface.pOnLcmOn : powerOn()/\n    manager.powerOn(true);
+				
+				iface.icInterface.pOnLcmOn - -> iface.icInterface.pOffLcmOn : powerOff()/\n    manager.powerOff();
+				
+				iface.icInterface.pOnLcmOn - -> iface.icInterface.waitingScriptResp : getScript()/\n    manager.getScript();
+				
+				iface.icInterface.waitingScriptResp - -> iface.icInterface.pOnLcmOn : scriptResp()/\n    User.scriptResp();
+				
+				iface.icInterface.pOnLcmOn - -> iface.icInterface.choiceUpdate : updateScript(success)
+				
+				iface.icInterface.choiceUpdate - -> iface.icInterface.waitingScriptUpdate : [success == true]/\n    manager.updateScript(true);
+				
+				iface.icInterface.choiceUpdate - -> iface.icInterface.waitingScriptUpdate : [else]/\n    manager.updateScript(false);
+				
+				iface.icInterface.waitingScriptUpdate - -> iface.icInterface.pOnLcmOn : scriptResp()/\n    User.scriptResp();
+				
+
+				}
+				
+				
+			
+	
+				[*] - -> iface.icInterface 
+				
+
+@enduml
+
+PlantUML version 1.2020.21(Mon Nov 30 17:40:11 CET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

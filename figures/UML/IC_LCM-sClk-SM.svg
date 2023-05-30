@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="390px" preserveAspectRatio="none" style="width:281px;height:390px;" version="1.1" viewBox="0 0 281 390" width="281px" zoomAndPan="magnify"><defs><filter height="300%" id="f8jzkyoc8twmb" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FEFECE" filter="url(#f8jzkyoc8twmb)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="81" x="133.5" y="87"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="71" x="138.5" y="111.8467">stsWaiting</text><rect fill="#FEFECE" filter="url(#f8jzkyoc8twmb)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="94" x="7" y="204"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="84" x="12" y="228.8467">stsCounting</text><rect fill="#FEFECE" filter="url(#f8jzkyoc8twmb)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="88" x="75" y="336"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="80" y="360.8467">stsWakeUp</text><ellipse cx="174" cy="16" fill="#000000" filter="url(#f8jzkyoc8twmb)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><!--MD5=[1e34fe44111969368fa59c1a95c715cc]
+link *start to sClk.stsWaiting--><path d="M174,26.189 C174,39.18 174,63.376 174,81.734 " fill="none" id="*start-to-sClk.stsWaiting" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="174,86.743,178,77.743,174,81.743,170,77.743,174,86.743" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f7984c21a5bb76d6424e1e36772952b6]
+link sClk.stsWaiting to sClk.stsCounting--><path d="M144.328,127.179 C132.187,135.652 118.355,146.146 107,157 C93.4472,169.955 80.2397,186.389 70.3993,199.617 " fill="none" id="sClk.stsWaiting-to-sClk.stsCounting" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="67.1955,203.97,75.7521,199.093,70.1595,199.9432,69.3093,194.3507,67.1955,203.97" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="68" x="108" y="170.0669">setAlarm()</text><!--MD5=[4706ab5b32ab55164c3ef7aef1d88620]
+link sClk.stsCounting to sClk.stsWakeUp--><path d="M41.3014,244.118 C31.6415,261.274 21.7587,286.6571 33,306 C41.3727,320.4068 55.7416,330.9299 70.3628,338.4444 " fill="none" id="sClk.stsCounting-to-sClk.stsWakeUp" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="74.9022,340.6808,68.5968,333.1149,70.4171,338.4709,65.0611,340.2912,74.9022,340.6808" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="83" x="63.5" y="287.0669">after(10day)/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="126" x="50" y="302.1997">manager.wakeUp();</text><!--MD5=[f1290a0576f9ccce232ed53ef1edbee3]
+link sClk.stsWakeUp to sClk.stsWaiting--><path d="M154.002,335.8729 C164.68,328.1178 175.14,318.101 181,306 C208.691,248.82 192.779,171.077 181.769,132.211 " fill="none" id="sClk.stsWakeUp-to-sClk.stsWaiting" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="180.32,127.217,178.9858,136.9751,181.713,132.019,186.6691,134.7462,180.32,127.217" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="76" x="197" y="228.5669">stopAlarm()</text><!--MD5=[e9392a1452166d53399bd329f28b7e1c]
+@startuml
+'left to right direction
+
+hide empty description
+
+
+
+
+	
+	
+				
+				
+				
+				
+				
+				state "stsWaiting" as sClk.stsWaiting  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "stsCounting" as sClk.stsCounting  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "stsWakeUp" as sClk.stsWakeUp  
+				
+				
+			
+	
+				[*] - -> sClk.stsWaiting 
+				
+				sClk.stsWaiting - -> sClk.stsCounting : setAlarm()
+				
+				sClk.stsCounting - -> sClk.stsWakeUp : after(10day)/\n    manager.wakeUp();
+				
+				sClk.stsWakeUp - -> sClk.stsWaiting : stopAlarm()
+				
+
+@enduml
+
+@startuml
+
+hide empty description
+
+
+
+
+	
+	
+				
+				
+				
+				
+				
+				state "stsWaiting" as sClk.stsWaiting  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "stsCounting" as sClk.stsCounting  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "stsWakeUp" as sClk.stsWakeUp  
+				
+				
+			
+	
+				[*] - -> sClk.stsWaiting 
+				
+				sClk.stsWaiting - -> sClk.stsCounting : setAlarm()
+				
+				sClk.stsCounting - -> sClk.stsWakeUp : after(10day)/\n    manager.wakeUp();
+				
+				sClk.stsWakeUp - -> sClk.stsWaiting : stopAlarm()
+				
+
+@enduml
+
+PlantUML version 1.2020.21(Mon Nov 30 17:40:11 CET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

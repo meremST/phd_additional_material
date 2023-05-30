@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="150px" preserveAspectRatio="none" style="width:133px;height:150px;" version="1.1" viewBox="0 0 133 150" width="133px" zoomAndPan="magnify"><defs><filter height="300%" id="f1oquz37us4mpj" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><g id="SoCIPs.waitingConfig"><rect fill="#FEFECE" filter="url(#f1oquz37us4mpj)" height="50.2656" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="112" x="7" y="86"/><line style="stroke:#A80036;stroke-width:1.5;" x1="7" x2="119" y1="112.2969" y2="112.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="92" x="17" y="103.9951">waitingConfig</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="12" y="128.4355">setIPs()</text></g><ellipse cx="63" cy="16" fill="#000000" filter="url(#f1oquz37us4mpj)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><!--MD5=[0020a5e0e49891e8994ebf633c22f6b0]
+link *start to SoCIPs.waitingConfig--><path d="M63,26.257 C63,38.8559 63,61.9809 63,80.7428 " fill="none" id="*start-to-SoCIPs.waitingConfig" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="63,85.9065,67,76.9065,63,80.9065,59,76.9065,63,85.9065" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[fe03d6f0361420ee2421e2b0d528a286]
+@startuml
+'left to right direction
+
+hide empty description
+
+
+
+
+	
+	
+				
+				
+				
+				
+					SoCIPs.waitingConfig : setIPs()
+				
+				state "waitingConfig" as SoCIPs.waitingConfig  
+				
+				
+			
+	
+				[*] - -> SoCIPs.waitingConfig 
+				
+
+@enduml
+
+@startuml
+
+hide empty description
+
+
+
+
+	
+	
+				
+				
+				
+				
+					SoCIPs.waitingConfig : setIPs()
+				
+				state "waitingConfig" as SoCIPs.waitingConfig  
+				
+				
+			
+	
+				[*] - -> SoCIPs.waitingConfig 
+				
+
+@enduml
+
+PlantUML version 1.2020.21(Mon Nov 30 17:40:11 CET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

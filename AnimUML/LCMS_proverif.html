@@ -1,0 +1,367 @@
+<script>
+	//TODO: add intermediate state when needed to handle abort verification
+	//TODO: Improve blockchain state, bc is used more time in proverif protocol.
+	const simplifyBlockchain = true;
+	// @ts-check
+	/**
+	 * @type {import("./Model.d.ts").Model<false>}
+	 */
+	 const model =
+		{
+			name: "LCMS_proverif",
+			objects: [
+				{
+					name: "blockchain",
+					class: "Ledger",
+					//isActor: true,
+					behavior: String.raw`
+						${simplifyBlockchain ? `
+							[*] -> idle
+							idle: newBatch/alice.batchInfoResp(true);
+							idle: divideBatch/alice.batchInfoResp(true);
+						` : `
+							[*] -> idle
+							idle -> newBatch : newBatch/deviceFlag = true
+							newBatch: getBatchInfo[deviceFlag == true]/alice.batchInfoResp();
+							newBatch -> updateBatch : divideBatch/certificateFlag = true;
+							updateBatch : getBatchInfo[certificateFlag == true]/alice.batchInfoResp();
+
+						`}
+
+					`,
+					features: `
+						+newBatch(batchRoot: Boolean)
+						+getBatchInfo()
+						+divideBatch(newOwnershipProof: Boolean)
+						+getBatchInfo()
+					`,
+				},
+				{
+					name: "manufacturer",
+					class: "Manufacturer",
+					//isActor: true,
+					behavior: String.raw`
+						state requestCheck <<choice>>
+						[*] -> provisioning
+						provisioning -> deviceRegistration : /soc.provisionChip()
+						deviceRegistration -> waitRequest : /blockchain.newBatch()
+						waitRequest -> waitCertificateRequest : requestOwnershipInfo/alice.sendUidAndAccProof(true,true,true,true)
+						waitCertificateRequest -> requestCheck : sendNewBatch(salt, newBatchRoot, newBatchRootProof)
+						requestCheck -> waitBcWrite : [(salt && newBatchRoot && newBatchRootProof) == true]/blockchain.divideBatch()
+						waitBcWrite -> done : ${!simplifyBlockchain ? `[blockchain.certificateFlag == true]`:``}/alice.sendProof(true);
+						requestCheck -> abort: [else]
+					`,
+					features: `
+						+requestOwnershipInfo()
+						+sendNewBatch(salt: Boolean, newBatchRoot: Boolean, newBatchRootProof: Boolean)
+					`,
+				},
+				{
+					name: "alice",
+					class: "Client",
+					behavior: String.raw`
+						' state socCheck <<choice>>
+						' state ownershipCheck <<choice>>
+						state dataVerification <<choice>>
+						state checkOwner <<choice>>
+						state ownershipCertificateReception <<choice>>
+						[*] -> requestInfo
+						requestInfo -> waitManInfo : /manufacturer.requestOwnershipInfo();
+						waitManInfo -> waitBatchInfoResp: sendUidAndAccProof(arg0,arg1,arg2,arg3)/batchRoot = arg0;\nproofUid0 = arg1;\npkSoc = arg2;\npkMan = arg3;${!simplifyBlockchain ? `\nblockchain.getBatchInfo();` :``}
+						waitBatchInfoResp -> checkOwner: batchInfoResp(OwnershipProof)
+						checkOwner -> abort: [else]
+						checkOwner -> waitSoCInfo : [(pkMan && OwnershipProof) == true]/soc.getScript();
+						waitSoCInfo -> dataVerification : scriptResp(signedUid)
+						dataVerification -> abort : [else]
+						dataVerification -> waitNotification : [(signedUid && batchRoot && proofUid0 && pkSoc && pkMan) == true]/manufacturer.sendNewBatch(true,true,true);
+						waitNotification -> waitBcCertif : sendProof(arg0)/certificate = arg0;${!simplifyBlockchain ? `\nblockchain.getBatchInfo();`:``}
+						waitBcCertif -> ownershipCertificateReception : batchInfoResp(newOwnershipProof)
+						ownershipCertificateReception -> abort: [else]
+						ownershipCertificateReception -> updateScriptToSoc : [(newOwnershipProof && certificate) == true]/soc.updateScript(true, true, true);
+						' updateScriptToSoc -> abort
+						updateScriptToSoc -> SoCConfigured : /soc.configureSoc(true);
+
+
+
+						' blockchainInfoReception : 
+						' blockchainInfoReception -> waitSoCInfo : batchInfoResp/soc.getScript()
+						' blockchainInfoReception: [EP_IS_EMPTY(blockchain)]/blockchain.getBatchInfo()
+						' waitSoCInfo -> socCheck : scriptResp/
+						' socCheck -> waitOwnershipInfo : /manufacturer.requestOwnershipInfo()
+						' socCheck -> abort
+						' waitOwnershipInfo -> ownershipCheck : sendUidAndAccProof/
+
+						' ownershipCheck -> waitCertificate : /manufacturer.sendNewBatch()
+						' ownershipCheck -> abort
+						' ' updateScript doit être récup via blockchain
+						' waitCertificate: [EP_IS_EMPTY(blockchain)]/blockchain.getBatchInfo();
+						' waitCertificate -> ownershipCertificateReception : batchInfoResp
+						' ownershipCertificateReception -> abort
+						' ownershipCertificateReception -> updateScriptToSoc : /soc.updateScript()
+						' updateScriptToSoc -> SoCConfigured : /soc.configureSoc()
+
+						' ' blockchainInfoReception -> abort
+					`,
+					features: `
+						+batchInfoResp(ownershipProof: Boolean)
+						+scriptResp(signUid: Boolean)
+						+sendUidAndAccProof(batchRoot: Boolean, proofUid0: Boolean, pkSoc: Boolean, pkMan: Boolean)
+						'+updateScript()
+						+sendProof(certificate: Boolean)
+					`,
+				},
+				{
+					name: "soc",
+					class: "IntegratedCircuit",
+					behavior: String.raw`
+						state ownershipCertificateReception <<choice>>
+						state configCheck <<choice>>
+						[*] -> waitingSecret
+						waitingSecret -> waitingRequest : provisionChip
+						waitingRequest -> waitCertificate : getScript/alice.scriptResp(true)
+						waitCertificate -> ownershipCertificateReception : updateScript(newOwnershipProof, pkAlice, Hsalt)
+						ownershipCertificateReception -> abort: [else]
+						ownershipCertificateReception -> waitconfig : [(newOwnershipProof && pkAlice && Hsalt) == true]
+						waitconfig -> configCheck : configureSoc(signedConf)/
+
+						configCheck -> abort: [else]
+						configCheck -> configured : [signedConf == true]
+					`,
+					/*[*] -> waitingSecret
+						waitingSecret -> waitingRequest
+						waitingRequest -> waitCertificate
+						waitCertificate -> waitingRequest
+						waitingRequest -> ownershipCertificateReception
+						ownershipCertificateReception -> abort
+						ownershipCertificateReception -> waitingRequest
+						waitingRequest -> waitconfig
+						waitconfig -> abort
+						waitconfig -> waitingRequest*/
+					features: `
+						+provisionChip(uid0: Boolean, Hroot: Boolean)
+						+getScript()
+						+updateScript(newOwnershipProof: Boolean, pkAlice: Boolean, Hsalt: Boolean)
+						+configureSoc(signedConf: Boolean)
+					`,
+				},
+			],
+			connectorByName: {
+				C1: {
+					ends: [
+						"manufacturer",
+						"alice",
+					],
+					possibleMessages: {
+						forward: [
+							"sendUidAndAccProof",
+							"sendProof",
+						],
+						reverse: [
+							"requestOwnershipInfo",
+							"sendNewBatch",
+						],
+					},
+				},
+				C2: {
+					ends: [
+						"alice",
+						"soc",
+					],
+					possibleMessages: {
+						forward: [
+							"getScript",
+							"updateScript",
+							"configureSoc",
+						],
+						reverse: [
+							"scriptResp",
+						],
+					},
+				},
+				C3: {
+					ends: [
+						"manufacturer",
+						"soc",
+					],
+					possibleMessages: {
+						forward: [
+							"provisionChip",
+						],
+						//reverse:
+					},
+				},
+				C4: {
+					ends: [
+						"alice",
+						"blockchain",
+					],
+					possibleMessages: {
+						/*forward: [
+							"onButton",
+							"offButton",
+						],*/
+						reverse: [
+							"batchInfoResp",
+						]
+					},
+				},
+				C5: {
+					ends: [
+						"manufacturer",
+						"blockchain",
+					],
+					possibleMessages: {
+						forward: [
+							"newBatch",
+							"divideBatch",
+						],
+						//reverse:
+					},
+				},
+			},
+			/*interactions: {
+				turnOnOff: String.raw`
+					
+					actor manufacturer
+					participant alice
+					ref over a, b : turnOn
+					ref over a, b : turnOff
+				`,
+				turnOn: String.raw`
+					
+					actor manufacturer
+					participant alice
+					e0 : alice -? lamp : onButtons()
+					accept e0
+				`,
+				turnOff: String.raw`
+					
+					actor manufacturer
+					participant alice
+					e0 : alice -? lamp : offButton()
+					accept e0
+				`,
+			},*/
+			interactions: {
+				ConfigureBreakpoint: String.raw`
+					participant alice
+					participant soc
+					e0 : alice -? soc : configureSoc(*)
+					accept e0
+				`,
+			},
+			watchExpressions: {
+				//lampOn: "IS_IN_STATE(lamp, lamp.On)",
+			},
+			LTLProperties: {
+				//lampTurnsOn: "[] (|EP_CONTAINS(lamp, onButton)| -> (<>lampOn))",
+			},
+			settings: {
+			        display: {
+			            // these settings are described in the "display" menu of the user
+			            // interface where they appear in the same order
+
+			            hideLinks: false,
+
+			            // structural diagram
+			            hideClasses: false,
+			            hideOperations: false,
+			            hideMethods: false,
+			            showPorts: false,
+			            showEndNames: false,
+
+			            // state diagram
+			            hideStateMachines: false,
+			            hideOuterSMBoxes: false,
+			            showExplicitSM: false,
+
+			            // history/trace interaction diagram
+			            hideStates: false,
+			            showPseudostateInvariants: false,
+			            hideSets: false,
+			            showTransitions: false,
+			        },
+			        semantics: {
+			            // these settings are described in the "semantics" menu of the user
+			            // interface where they appear in the same order
+
+			            fireInitialTransitions: true,
+			            autoFireAfterChoice: true,
+			            autoReceiveDisabled: false,
+			            considerGuardsTrue: false,
+			            checkEvents: true,
+			            keepOneMessagePerTrigger: true,
+			            enableEventPools: true,
+			            matchFirst: true,
+			            symbolicValues: false,
+			            reactiveSystem: true,
+			        },
+			        interface: {
+			            hideEmptyHistory: false,
+			            disableInteractionSelection: false,
+			            disableModelSelection: false,
+			            disableObjectSelection: false,
+			            disableDoc: false,
+			            disableSettings: false,
+			            disableHistorySettings: false,
+			            disableReset: false,
+			            disableSwitchDiagram: false,
+			            onlyInteraction: false,
+			            hideInteraction: false,
+			            disableExports: false,
+			            hideHistory: false,
+			            disableEdit: false,
+			            historyType: "TCSVG sequence",
+			            interaction: undefined,
+			//            styleMode: "dark",
+			//            displayedObjects: [],
+			        },
+			        tools: {
+			        },
+			    },
+			    historyCauses: [
+					"transition:blockchain.init2idle_1",
+					"transition:manufacturer.init2provisioning_1",
+					"transition:alice.init2requestInfo_1",
+					"transition:soc.init2waitingSecret_1",
+					"transition:manufacturer.provisioning2deviceRegistration_1",
+					"transition:soc.waitingSecret2waitingRequest_1",
+					"transition:manufacturer.deviceRegistration2waitRequest_1",
+					"transition:alice.requestInfo2waitManInfo_1",
+					"transition:manufacturer.waitRequest2waitCertificateRequest_1",
+					"transition:alice.waitManInfo2waitBatchInfoResp_1",
+					"transition:blockchain.idle.__internal__T1__",
+					"transition:alice.waitBatchInfoResp2checkOwner_1",
+					"transition:alice.checkOwner2waitSoCInfo_1",
+					"transition:soc.waitingRequest2waitCertificate_1",
+					"transition:alice.waitSoCInfo2dataVerification_1",
+					"transition:alice.dataVerification2waitNotification_1",
+					"transition:manufacturer.waitCertificateRequest2requestCheck_1",
+					"transition:manufacturer.requestCheck2waitBcWrite_1",
+					"transition:manufacturer.waitBcWrite2done_1",
+					"transition:alice.waitNotification2waitBcCertif_1",
+					"transition:blockchain.idle.__internal__T2__",
+					"transition:alice.waitBcCertif2ownershipCertificateReception_1",
+					"transition:alice.ownershipCertificateReception2updateScriptToSoc_1",
+					"transition:soc.waitCertificate2ownershipCertificateReception_1",
+					"transition:soc.ownershipCertificateReception2waitconfig_1",
+					"transition:alice.updateScriptToSoc2SoCConfigured_1",
+					"transition:soc.waitconfig2configCheck_1",
+					"transition:soc.configCheck2configured_1",
+				],
+		};
+
+	//https://418252c5e69e7fe6c6c1e4aedba4dafe.kher.nl/AnimUML.html
+	//http://172.24.2.1/AnimUML.html
+	//https://animuml.obpcdl.org/AnimUML.html
+	//"http://127.0.0.1:8082"
+	const origin =
+	/**/
+	    "https://animuml20220518.kher.nl"
+	/*/
+	    "https://animumlv20221216.kher.nl/"
+	/**/
+	document.write(`
+		<iframe width="100%" height="100%" src='${origin}/AnimUML.html#${encodeURIComponent(JSON.stringify(model)).replace(/'/g, '%27')}'></iframe>
+	`);
+</script>

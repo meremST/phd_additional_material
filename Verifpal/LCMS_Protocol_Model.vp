@@ -1,0 +1,159 @@
+// SPDX-License-Identifier: BSD-3-Clause
+//
+// Protocol modeling of a SoC Life Cycle Management System (LCMS).
+// This communication consist of:
+//      Use of Blockchain-based and Ownership system to transfer a SoC
+//      from the manufacturer to the first customer (Alice).
+// TEST STATUS : PASS (needs several hours of computation)
+//
+// Copyright (C) STMicroelectronics 2021
+// Author: Maxime MERE <maxime.mere@st.com> for STMicroelectronics.
+//
+attacker[active]
+
+principal Alice[
+    knows private skAlice
+    pkAlice = G^skAlice
+]
+
+Alice -> Manufacturer: [pkAlice] //guarded because we can use state of the art method for key exchanges
+
+principal Manufacturer[
+    knows private skSoC
+    M_pkSoC = G^skSoC
+
+    knows private skMan
+    pkMan = G^skMan
+    
+    knows private uid0
+    knows private uidN
+    proofUid0 = HASH(uidN)
+    M_batchRoot = HASH(HASH(uid0),HASH(uidN))
+
+    batchRootProof = SIGN(skMan,M_batchRoot)
+
+    knows private shkey1
+    enc_provisioning = ENC(shkey1,CONCAT(skSoC,uid0,pkMan,batchRootProof))
+]
+
+//correspond to initial provisioning
+//We consider attacker can't have access to this comms
+// thats why SoC recreate all secret. in real protocol SoC don't know everything
+//so I will not use unknown data like skMan or uidN.
+principal SoC[
+    knows private skSoC
+    I_pkSoC = G^skSoC
+
+    knows private skMan //don't really know this value
+    I_pkMan = G^skMan
+    
+    knows private uid0
+    knows private uidN // don't really know this value but need it to articifially provision batchRoot
+    I_batchRoot = HASH(HASH(uid0),HASH(uidN))
+
+    I_batchRootProof = SIGN(skMan,I_batchRoot)
+]
+
+// Phase 0: Manufacturer provisionned SoC
+phase[1]
+
+principal Blockchain[]
+
+//guard are added to modelize the ability of blockchain to not be tampered
+// Manufacturer initialize smart-contract:
+//newBatch message:
+Manufacturer -> Blockchain: [batchRootProof]//,[pkMan]
+
+//Not modeled: Blockchain newBatch response with  contractAddr, batchAddr paramters
+
+phase[2]
+//Commercial trades occurs here
+
+ //senddUidAndAccProof:
+Manufacturer -> Alice: M_batchRoot,proofUid0,M_pkSoC,pkMan
+//phase 3: Manufacurer send necessary data to prove to Alice that the SoC is legit
+
+//,not modeled: getScript
+
+principal SoC[
+    signUid0 = SIGN(skSoC,uid0)
+
+    //knows private shkey2//trick to secure comms beetween SoC and Alice
+    //enc_uid0 = ENC(shkey2, uid0)
+]
+
+// scriptResp:
+SoC -> Alice: signUid0, uid0 
+
+//not modeled : getBatchInfo with paramters contractAddr, batchAddr
+
+//guard are justified by BC properties
+//batchInfoResp:
+Blockchain -> Alice: [batchRootProof]
+
+principal Alice [
+    //Alice check the validity of the proof
+    //knows private shkey2
+    //A_uid0 = DEC(shkey2, enc_uid0)
+    
+    //batchRoot rebuild
+    A_batchRoot = HASH(HASH(uid0),proofUid0)
+    _ = ASSERT(A_batchRoot,M_batchRoot)?
+
+    _ = SIGNVERIF(M_pkSoC,uid0,signUid0)?
+    _ = SIGNVERIF(pkMan, A_batchRoot,batchRootProof)?
+
+    //Alice creates a new merkle root tree to prepare the ownership transfert
+    generates salt
+    Hsalt = HASH(salt)
+    newBatchRoot = HASH(HASH(uid0),HASH(salt))
+    newBatchRootProof = SIGN(skAlice,newBatchRoot)
+]
+
+//sendNewBatch:
+Alice -> Manufacturer: salt, newBatchRoot, newBatchRootProof 
+
+principal Manufacturer[
+    //Manufcaturer check the validiy of the merkle tree and sign it to prepare the update of the smart contract
+    _ = ASSERT(HASH(HASH(uid0),HASH(salt)),newBatchRoot)?
+    _ = SIGNVERIF(pkAlice,newBatchRoot,newBatchRootProof)?
+
+    newOwnershipProof = SIGN(skMan,newBatchRootProof)
+]
+
+// divideBatch:
+Manufacturer -> Blockchain: [newOwnershipProof] 
+
+//not modeled : sendProof with parameters contractAddr, newBatchAddr
+
+//later Alice can recover the newOwnershipProof and update SoC
+phase[3]
+
+//not modeled getBatchInfo
+
+//batchInfoResp:
+Blockchain -> Alice: [newOwnershipProof]
+
+principal Alice[
+    _ = SIGNVERIF(pkMan, newBatchRootProof, newOwnershipProof)?
+]
+
+//scriptUpdate:
+Alice -> SoC: newOwnershipProof, salt, newBatchRoot, newBatchRootProof, pkAlice 
+
+principal SoC[
+ //SoC check link beetween his new owner (Alice) and the first one (Man)
+    _ = ASSERT(HASH(HASH(uid0),HASH(salt)),newBatchRoot)?
+    _ = SIGNVERIF(I_pkMan,newBatchRootProof,newOwnershipProof)?
+    _ = SIGNVERIF(pkAlice, newBatchRoot, newBatchRootProof)?
+]
+
+//not modeled : scriptResp
+
+//Queries section:
+queries[ 
+    confidentiality? uidN 
+    authentication? Blockchain -> Alice: batchRootProof
+    authentication? Alice -> SoC: newOwnershipProof
+    authentication? Alice -> SoC: newBatchRootProof
+]

@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="853px" preserveAspectRatio="none" style="width:1428px;height:853px;" version="1.1" viewBox="0 0 1428 853" width="1428px" zoomAndPan="magnify"><defs><filter height="300%" id="fvk50clu7wly8" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><polygon fill="#FEFECE" filter="url(#fvk50clu7wly8)" points="828.5,6,840.5,18,828.5,30,816.5,18,828.5,6" style="stroke:#A80036;stroke-width:1.5;"/><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="155" x="1038" y="799"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="145" x="1043" y="823.8467">lcmsWaitingPowerOn</text><ellipse cx="1397.5" cy="407" fill="#000000" filter="url(#fvk50clu7wly8)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="600.2969" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="443.5" x="7" y="107"/><rect fill="#FFFFFF" height="568" rx="12.5" ry="12.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="437.5" x="10" y="136.2969"/><line style="stroke:#A80036;stroke-width:1.5;" x1="7" x2="450.5" y1="133.2969" y2="133.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="86" x="185.75" y="124.9951">normalMode</text><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="82" x="138.5" y="217.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="72" x="143.5" y="242.1436">nmWaiting</text><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="88" x="135.5" y="310.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="140.5" y="335.1436">nmWorking</text><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="97" x="19" y="418.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="87" x="24" y="443.1436">waitingScript</text><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="115" x="19" y="541.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="105" x="24" y="566.1436">updatingConfig</text><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="141" x="118" y="649.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="131" x="123" y="674.1436">waitingConfigration</text><ellipse cx="179.5" cy="154.2969" fill="#000000" filter="url(#fvk50clu7wly8)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><!--MD5=[1bdbe238fa2cce0c0f2508c3fcf3b72c]
+link *start*manager.normalMode to manager.normalMode.nmWaiting--><path d="M179.5,164.5889 C179.5,176.0129 179.5,195.8439 179.5,211.7589 " fill="none" id="*start*manager.normalMode-to-manager.normalMode.nmWaiting" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="179.5,216.9889,183.5,207.9889,179.5,211.9889,175.5,207.9889,179.5,216.9889" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="116" x="180.5" y="195.3638">/ipCtrlr.powerOn();</text><!--MD5=[4a7d0308fca0509a966afbe5b1af2154]
+link manager.normalMode.nmWaiting to manager.normalMode.nmWorking--><path d="M179.5,257.5959 C179.5,271.3499 179.5,289.9489 179.5,304.7579 " fill="none" id="manager.normalMode.nmWaiting-to-manager.normalMode.nmWorking" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="179.5,310.0259,183.5,301.0259,179.5,305.0259,175.5,301.0259,179.5,310.0259" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="90" x="180.5" y="288.3638">ipConfigured()</text><!--MD5=[ae484b32e16fe77d4cec298ed5842d5a]
+link manager.normalMode.nmWorking to manager.normalMode.waitingScript--><path d="M135.284,336.4919 C114.3237,341.2959 90.7982,350.5359 76.5,368.2969 C66.5143,380.7009 64.4257,398.6239 64.7492,413.0949 " fill="none" id="manager.normalMode.nmWorking-to-manager.normalMode.waitingScript" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="64.9674,418.2529,68.5833,409.0918,64.756,413.2573,60.5904,409.4301,64.9674,418.2529" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="64" x="139.5" y="381.3638">wakeUp()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="172" x="93.5" y="396.4966">SecureStorage.getScript();</text><!--MD5=[4c1cf703611a7c3cfa5bb960ddbe5579]
+link manager.normalMode.waitingScript to manager.normalMode.updatingConfig--><path d="M65.7185,458.4059 C64.4942,475.4929 63.5635,501.1769 66.5,523.2969 C67.0664,527.5639 67.9851,532.0369 69.0419,536.3389 " fill="none" id="manager.normalMode.waitingScript-to-manager.normalMode.updatingConfig" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="70.333,541.2889,71.9303,531.5704,69.0702,536.451,64.1896,533.5909,70.333,541.2889" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="122.5" y="496.8638">scriptResp()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="174" x="83.5" y="511.9966">SecureStorage.setConfig();</text><!--MD5=[f79f8a1897b82a62852dd8ab20358060]
+link manager.normalMode.updatingConfig to manager.normalMode.waitingConfigration--><path d="M81.0815,581.4159 C85.579,596.6029 93.7994,617.5106 107.5,631.2969 C113.3661,637.1997 120.346,642.256 127.713,646.5609 " fill="none" id="manager.normalMode.updatingConfig-to-manager.normalMode.waitingConfigration" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="132.343,649.145,126.432,641.2671,127.9765,646.7091,122.5346,648.2535,132.343,649.145" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="67" x="153.5" y="612.3638">writeAck()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="141" x="124.5" y="627.4966">ipCtrlr.updateConfig();</text><!--MD5=[f3957689e70e9fb8050f24d4af4e1ab5]
+link manager.normalMode.waitingConfigration to manager.normalMode.nmWorking--><path d="M248.343,649.0719 C255.534,644.3565 261.934,638.5172 266.5,631.2969 C328.979,532.5069 330.982,465.7909 266.5,368.2969 C257.796,355.1359 243.36,346.6419 228.726,341.1659 " fill="none" id="manager.normalMode.waitingConfigration-to-manager.normalMode.nmWorking" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="223.763,339.4219,230.9285,346.1788,228.4804,341.0791,233.5801,338.631,223.763,339.4219" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="94" x="314.5" y="489.3638">ipConfigured()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="110" x="330.5" y="504.4966">sClk.stopAlarm();</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="330.5" y="519.6294">IT = false;</text><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="579.2969" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="687.415" x="485" y="117.5"/><rect fill="#FFFFFF" height="547" rx="12.5" ry="12.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="681.415" x="488" y="146.7969"/><line style="stroke:#A80036;stroke-width:1.5;" x1="485" x2="1172.415" y1="143.7969" y2="143.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="71" x="793.2075" y="135.4951">clcmMode</text><polygon fill="#FEFECE" filter="url(#fvk50clu7wly8)" points="806.415,154.7969,818.415,166.7969,806.415,178.7969,794.415,166.7969,806.415,154.7969" style="stroke:#A80036;stroke-width:1.5;"/><g id="manager.clcmMode.manager.clcmMode.executingScript"><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="78.2031" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="134" x="739.415" y="261.7969"/><line style="stroke:#A80036;stroke-width:1.5;" x1="739.415" x2="873.415" y1="288.0938" y2="288.0938"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="752.915" y="279.792">executingScript</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="73" x="744.415" y="304.2324">[IT != true]/</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="98" x="760.415" y="318.2012">sClk.setAlarm();</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="58" x="760.415" y="332.1699">IT = true;</text></g><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="92" x="671.415" y="515.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="82" x="676.415" y="540.6436">clcmWaiting</text><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="140" x="520.415" y="638.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="130" x="525.415" y="663.6436">clcmWaitingScript2</text><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="131" x="916.915" y="638.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="121" x="921.915" y="663.6436">clcmWaitingScript</text><rect fill="#FEFECE" filter="url(#fvk50clu7wly8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="137" x="713.915" y="422.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="127" x="718.915" y="447.6436">waitingConfigWrite</text><ellipse cx="879.415" cy="442.7969" fill="#000000" filter="url(#fvk50clu7wly8)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><!--MD5=[778a323b2662e2be7465a4cc9ac7c8e5]
+link *start*manager.clcmMode to manager.clcmMode.clcmWaiting--><path d="M873.619,451.5229 C864.545,463.1199 845.888,485.0259 825.415,497.7969 C808.199,508.5359 787.481,516.6029 768.815,522.4179 " fill="none" id="*start*manager.clcmMode-to-manager.clcmMode.clcmWaiting" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="763.609,523.9979,773.383,525.2102,768.3933,522.545,771.0584,517.5553,763.609,523.9979" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="86" x="848.415" y="493.8638">/valid = false;</text><!--MD5=[9f55fbe385674f91f7c7ca327268af6a]
+link manager.clcmMode.clcmWaiting to manager.clcmMode.clcmWaitingScript2--><path d="M687.473,555.8859 C680.66,561.1369 673.84,567.2179 668.415,573.7969 C653.619,591.7393 660.695,603.2648 645.415,620.7969 C640.685,626.2247 634.981,631.2093 629.064,635.6432 " fill="none" id="manager.clcmMode.clcmWaiting-to-manager.clcmMode.clcmWaitingScript2" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="624.942,638.6235,634.5789,636.5912,628.9937,635.6937,629.8913,630.1085,624.942,638.6235" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="72" x="727.415" y="594.3638">getScript()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="172" x="685.415" y="609.4966">SecureStorage.getScript();</text><!--MD5=[38cf6962a99b674dc0f1c39f51d4ab84]
+link manager.clcmMode.clcmWaitingScript2 to manager.clcmMode.clcmWaiting--><path d="M527.9172,638.6703 C520.6041,633.9479 514.0954,628.0804 509.415,620.7969 C498.1224,603.2236 496,589.8089 509.415,573.7969 C528.9822,550.4419 610.758,541.8169 665.756,538.6399 " fill="none" id="manager.clcmMode.clcmWaitingScript2-to-manager.clcmMode.clcmWaiting" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="670.992,538.3489,661.7842,534.8538,665.9997,538.626,662.2275,542.8415,670.992,538.3489" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="535.415" y="594.3638">scriptResp()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="114" x="526.415" y="609.4966">iface.scriptResp();</text><!--MD5=[08a0ce669c3c47fa371f1023398e4b63]
+link manager.clcmMode.clcmWaiting to manager.clcmMode.clcmWaitingScript--><path d="M763.431,539.1489 C793.376,542.8439 831.688,551.9099 858.415,573.7969 C876.408,588.5312 864.138,605.229 881.415,620.7969 C890.276,628.7819 901.003,635.0856 912.114,640.05 " fill="none" id="manager.clcmMode.clcmWaiting-to-manager.clcmMode.clcmWaitingScript" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="916.894,642.0966,910.1955,634.8764,912.2978,640.1282,907.0461,642.2304,916.894,642.0966" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="132" x="882.415" y="586.8638">updateScript(_valid)/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="172" x="898.415" y="601.9966">SecureStorage.getScript();</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="898.415" y="617.1294">valid=_valid;</text><!--MD5=[7940abd876aa29ee1f2e670b6312ed17]
+link manager.clcmMode.clcmWaitingScript to manager.clcmMode.choice1--><path d="M1048.062,639.77 C1056.967,634.8704 1065.173,628.6604 1071.415,620.7969 C1094.947,591.1535 1085.415,574.6449 1085.415,536.7969 C1085.415,299.7969 1085.415,299.7969 1085.415,299.7969 C1085.415,246.8189 1069.511,226.1619 1025.415,196.7969 C992.056,174.5819 867.194,169.3109 822.474,168.1239 " fill="none" id="manager.clcmMode.clcmWaitingScript-to-manager.clcmMode.choice1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="817.429,167.9989,826.3268,172.2213,822.4275,168.1232,826.5257,164.2238,817.429,167.9989" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="76" x="1086.415" y="447.3638">scriptResp()</text><!--MD5=[2d419e34c4721f7728358a49f5d70203]
+link manager.clcmMode.choice1 to manager.clcmMode.clcmWaiting--><path d="M800.793,173.3329 C779.652,194.6549 705.231,274.4409 687.415,357.7969 C675.804,412.1209 694.903,476.5989 707.578,510.7589 " fill="none" id="manager.clcmMode.choice1-to-manager.clcmMode.clcmWaiting" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="709.397,515.5749,709.9579,505.742,707.6298,510.8976,702.4742,508.5695,709.397,515.5749" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="40" x="716.415" y="378.3638">[else]/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="704.415" y="393.4966">scriptResp();</text><!--MD5=[eb184e8f989799e18c7b0135f6365fdc]
+link manager.clcmMode.choice1 to manager.clcmMode.executingScript--><path d="M806.415,179.0509 C806.415,196.0719 806.415,229.2719 806.415,256.5579 " fill="none" id="manager.clcmMode.choice1-to-manager.clcmMode.executingScript" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="806.415,261.5779,810.415,252.5779,806.415,256.5779,802.415,252.5779,806.415,261.5779" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="99" x="807.415" y="209.8638">[valid == true]/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="197" x="823.415" y="224.9966">SecureStorage.setScript(true);</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="823.415" y="240.1294">valid=false;</text><!--MD5=[e63101e8657fdf83767999db7b3f6e77]
+link manager.clcmMode.executingScript to manager.clcmMode.waitingConfigWrite--><path d="M799.857,340.0529 C795.617,364.7859 790.227,396.2289 786.569,417.5669 " fill="none" id="manager.clcmMode.executingScript-to-manager.clcmMode.waitingConfigWrite" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="785.724,422.4959,791.1885,414.302,786.5696,417.5679,783.3037,412.949,785.724,422.4959" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="67" x="798.415" y="370.8638">writeAck()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="114" x="814.415" y="385.9966">iface.scriptResp();</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="174" x="814.415" y="401.1294">SecureStorage.setConfig();</text><!--MD5=[d089f7a77bacb74077a0f8a1a6d6ed62]
+link manager.clcmMode.waitingConfigWrite to manager.clcmMode.clcmWaiting--><path d="M768.63,463.0959 C758.547,477.2119 744.819,496.4309 734.114,511.4189 " fill="none" id="manager.clcmMode.waitingConfigWrite-to-manager.clcmMode.clcmWaiting" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="731.18,515.5259,739.6669,510.5286,734.0869,511.4577,733.1578,505.8776,731.18,515.5259" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="757.415" y="493.8638">writeAck()</text><!--MD5=[4b0b48776462cf9f4efb1510cc591227]
+link *start to manager.lcmsWaitingPowerOn--><path d="M1398.89,416.925 C1404.38,455.174 1421.38,607.811 1360.5,707 C1326,763.2107 1255,791.184 1198.27,804.968 " fill="none" id="*start-to-manager.lcmsWaitingPowerOn" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1193.17,806.1776,1202.8513,807.9864,1198.0343,805.0206,1201.0001,800.2036,1193.17,806.1776" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[019129f0c825e9d255aeae6af3eadd98]
+link manager.lcmsWaitingPowerOn to manager.bootChoice--><path d="M1134.34,798.7946 C1153.03,778.142 1180.19,743.3464 1189.5,707 C1222.59,577.838 1271.86,211.853 1189.5,107 C1145.4,50.863 907.735,26.018 844.152,20.317 " fill="none" id="manager.lcmsWaitingPowerOn-to-manager.bootChoice" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="838.881,19.852,847.4954,24.6261,843.8617,20.2906,848.1972,16.657,838.881,19.852" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="108" x="1235.5" y="411.5669">powerOn(lcmPin)</text><!--MD5=[0593b3f723474ff214b67312fa1837ed]
+link manager.bootChoice to manager.clcmMode--><path d="M828.5,30.165 C828.5,45.521 828.5,75.455 828.5,112.013 " fill="none" id="manager.bootChoice-to-manager.clcmMode" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="828.5,117.454,832.5,108.454,828.5,112.454,824.5,108.454,828.5,117.454" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="108" x="829.5" y="73.0669">[lcmPin == true]</text><!--MD5=[c20db7a355fec98220c977dd93b6a694]
+link manager.bootChoice to manager.normalMode--><path d="M817.477,19.169 C771.048,20.366 588.239,29.987 467.5,107 C463.088,109.814 458.721,112.738 454.401,115.763 " fill="none" id="manager.bootChoice-to-manager.normalMode" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="450.096,118.82,459.7498,116.8698,454.1725,115.9248,455.1175,110.3474,450.096,118.82" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="36" x="569.5" y="73.0669">[else]</text><!--MD5=[8125e557c9a21a15b3c100b08d8f36db]
+link manager.normalMode to manager.lcmsWaitingPowerOn--><path d="M450.163,696.031 C455.853,699.875 461.633,703.539 467.5,707 C561.979,762.7455 879.915,797.3578 1032.47,811.1441 " fill="none" id="manager.normalMode-to-manager.lcmsWaitingPowerOn" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1037.83,811.6257,1029.2197,806.8442,1032.8497,811.1828,1028.5111,814.8128,1037.83,811.6257" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="70" x="710.5" y="750.0669">powerOff()/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="112" x="697.5" y="765.1997">ipCtrlr.powerOff();</text><!--MD5=[f36b21c4a8cc6743309c0f96aacd03d5]
+link manager.clcmMode to manager.lcmsWaitingPowerOn--><path d="M1030.56,696.651 C1059.01,737.307 1083.77,772.6647 1099.09,794.5631 " fill="none" id="manager.clcmMode-to-manager.lcmsWaitingPowerOn" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1102.03,798.7609,1100.1498,789.0932,1099.1644,794.6635,1093.5941,793.6781,1102.03,798.7609" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="1080.5" y="757.5669">powerOff()</text><!--MD5=[a6816e319a70d9e73cb175aa349d552f]
+@startuml
+'left to right direction
+
+hide empty description
+
+
+
+
+	
+	
+				state manager.bootChoice <<choice>>
+				
+				
+				
+				
+				
+				
+				state "normalMode" as manager.normalMode  {
+					
+	
+	
+				
+				
+				
+				
+				
+				state "nmWaiting" as manager.normalMode.nmWaiting  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "nmWorking" as manager.normalMode.nmWorking  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "waitingScript" as manager.normalMode.waitingScript  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "updatingConfig" as manager.normalMode.updatingConfig  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "waitingConfigration" as manager.normalMode.waitingConfigration  
+				
+				
+			
+	
+				[*] - -> manager.normalMode.nmWaiting : /ipCtrlr.powerOn();
+				
+				manager.normalMode.nmWaiting - -> manager.normalMode.nmWorking : ipConfigured()
+				
+				manager.normalMode.nmWorking - -> manager.normalMode.waitingScript : wakeUp()/\n    SecureStorage.getScript();
+				
+				manager.normalMode.waitingScript - -> manager.normalMode.updatingConfig : scriptResp()/\n    SecureStorage.setConfig();
+				
+				manager.normalMode.updatingConfig - -> manager.normalMode.waitingConfigration : writeAck()/\n    ipCtrlr.updateConfig();
+				
+				manager.normalMode.waitingConfigration - -> manager.normalMode.nmWorking : ipConfigured()/\n    sClk.stopAlarm();\l    IT = false;
+				
+
+				}
+				
+				
+			
+				
+				
+				
+				
+				
+				state "clcmMode" as manager.clcmMode  {
+					
+	
+	
+				state manager.clcmMode.choice1 <<choice>>
+				
+				
+				
+				
+				
+					manager.clcmMode.executingScript : [IT != true]/\n    sClk.setAlarm();\l    IT = true;
+				
+				state "executingScript" as manager.clcmMode.executingScript  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "clcmWaiting" as manager.clcmMode.clcmWaiting  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "clcmWaitingScript2" as manager.clcmMode.clcmWaitingScript2  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "clcmWaitingScript" as manager.clcmMode.clcmWaitingScript  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "waitingConfigWrite" as manager.clcmMode.waitingConfigWrite  
+				
+				
+			
+	
+				[*] - -> manager.clcmMode.clcmWaiting : /valid = false;
+				
+				manager.clcmMode.clcmWaiting - -> manager.clcmMode.clcmWaitingScript2 : getScript()/\n    SecureStorage.getScript();
+				
+				manager.clcmMode.clcmWaitingScript2 - -> manager.clcmMode.clcmWaiting : scriptResp()/\n    iface.scriptResp();
+				
+				manager.clcmMode.clcmWaiting - -> manager.clcmMode.clcmWaitingScript : updateScript(_valid)/\n    SecureStorage.getScript();\l    valid=_valid;
+				
+				manager.clcmMode.clcmWaitingScript - -> manager.clcmMode.choice1 : scriptResp()
+				
+				manager.clcmMode.choice1 - -> manager.clcmMode.clcmWaiting : [else]/\n    scriptResp();
+				
+				manager.clcmMode.choice1 - -> manager.clcmMode.executingScript : [valid == true]/\n    SecureStorage.setScript(true);\l    valid=false;
+				
+				manager.clcmMode.executingScript - -> manager.clcmMode.waitingConfigWrite : writeAck()/\n    iface.scriptResp();\l    SecureStorage.setConfig();
+				
+				manager.clcmMode.waitingConfigWrite - -> manager.clcmMode.clcmWaiting : writeAck()
+				
+
+				}
+				
+				
+			
+				
+				
+				
+				
+				
+				state "lcmsWaitingPowerOn" as manager.lcmsWaitingPowerOn  
+				
+				
+			
+	
+				[*] - -> manager.lcmsWaitingPowerOn 
+				
+				manager.lcmsWaitingPowerOn - -> manager.bootChoice : powerOn(lcmPin)
+				
+				manager.bootChoice - -> manager.clcmMode : [lcmPin == true]
+				
+				manager.bootChoice - -> manager.normalMode : [else]
+				
+				manager.normalMode - -> manager.lcmsWaitingPowerOn : powerOff()/\n    ipCtrlr.powerOff();
+				
+				manager.clcmMode - -> manager.lcmsWaitingPowerOn : powerOff()
+				
+
+@enduml
+
+@startuml
+
+hide empty description
+
+
+
+
+	
+	
+				state manager.bootChoice <<choice>>
+				
+				
+				
+				
+				
+				
+				state "normalMode" as manager.normalMode  {
+					
+	
+	
+				
+				
+				
+				
+				
+				state "nmWaiting" as manager.normalMode.nmWaiting  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "nmWorking" as manager.normalMode.nmWorking  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "waitingScript" as manager.normalMode.waitingScript  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "updatingConfig" as manager.normalMode.updatingConfig  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "waitingConfigration" as manager.normalMode.waitingConfigration  
+				
+				
+			
+	
+				[*] - -> manager.normalMode.nmWaiting : /ipCtrlr.powerOn();
+				
+				manager.normalMode.nmWaiting - -> manager.normalMode.nmWorking : ipConfigured()
+				
+				manager.normalMode.nmWorking - -> manager.normalMode.waitingScript : wakeUp()/\n    SecureStorage.getScript();
+				
+				manager.normalMode.waitingScript - -> manager.normalMode.updatingConfig : scriptResp()/\n    SecureStorage.setConfig();
+				
+				manager.normalMode.updatingConfig - -> manager.normalMode.waitingConfigration : writeAck()/\n    ipCtrlr.updateConfig();
+				
+				manager.normalMode.waitingConfigration - -> manager.normalMode.nmWorking : ipConfigured()/\n    sClk.stopAlarm();\l    IT = false;
+				
+
+				}
+				
+				
+			
+				
+				
+				
+				
+				
+				state "clcmMode" as manager.clcmMode  {
+					
+	
+	
+				state manager.clcmMode.choice1 <<choice>>
+				
+				
+				
+				
+				
+					manager.clcmMode.executingScript : [IT != true]/\n    sClk.setAlarm();\l    IT = true;
+				
+				state "executingScript" as manager.clcmMode.executingScript  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "clcmWaiting" as manager.clcmMode.clcmWaiting  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "clcmWaitingScript2" as manager.clcmMode.clcmWaitingScript2  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "clcmWaitingScript" as manager.clcmMode.clcmWaitingScript  
+				
+				
+			
+				
+				
+				
+				
+				
+				state "waitingConfigWrite" as manager.clcmMode.waitingConfigWrite  
+				
+				
+			
+	
+				[*] - -> manager.clcmMode.clcmWaiting : /valid = false;
+				
+				manager.clcmMode.clcmWaiting - -> manager.clcmMode.clcmWaitingScript2 : getScript()/\n    SecureStorage.getScript();
+				
+				manager.clcmMode.clcmWaitingScript2 - -> manager.clcmMode.clcmWaiting : scriptResp()/\n    iface.scriptResp();
+				
+				manager.clcmMode.clcmWaiting - -> manager.clcmMode.clcmWaitingScript : updateScript(_valid)/\n    SecureStorage.getScript();\l    valid=_valid;
+				
+				manager.clcmMode.clcmWaitingScript - -> manager.clcmMode.choice1 : scriptResp()
+				
+				manager.clcmMode.choice1 - -> manager.clcmMode.clcmWaiting : [else]/\n    scriptResp();
+				
+				manager.clcmMode.choice1 - -> manager.clcmMode.executingScript : [valid == true]/\n    SecureStorage.setScript(true);\l    valid=false;
+				
+				manager.clcmMode.executingScript - -> manager.clcmMode.waitingConfigWrite : writeAck()/\n    iface.scriptResp();\l    SecureStorage.setConfig();
+				
+				manager.clcmMode.waitingConfigWrite - -> manager.clcmMode.clcmWaiting : writeAck()
+				
+
+				}
+				
+				
+			
+				
+				
+				
+				
+				
+				state "lcmsWaitingPowerOn" as manager.lcmsWaitingPowerOn  
+				
+				
+			
+	
+				[*] - -> manager.lcmsWaitingPowerOn 
+				
+				manager.lcmsWaitingPowerOn - -> manager.bootChoice : powerOn(lcmPin)
+				
+				manager.bootChoice - -> manager.clcmMode : [lcmPin == true]
+				
+				manager.bootChoice - -> manager.normalMode : [else]
+				
+				manager.normalMode - -> manager.lcmsWaitingPowerOn : powerOff()/\n    ipCtrlr.powerOff();
+				
+				manager.clcmMode - -> manager.lcmsWaitingPowerOn : powerOff()
+				
+
+@enduml
+
+PlantUML version 1.2020.21(Mon Nov 30 17:40:11 CET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

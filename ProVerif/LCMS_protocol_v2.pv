@@ -1,0 +1,195 @@
+(* SPDX-License-Identifier: GPL-2.0 *)
+(*
+ * Batch ownership transfert protocol model verification
+ *
+ * Copyright (C) STMicroelectronics 2023
+ * Author: Maxime MERE for STMicroelectronics.
+ *
+ *)
+
+ (*
+ the protocol looks like this: [] part means they are "guarded"
+    publick key exchange with Alice and manufacturer. BC is supposed immutable
+    Blockchain is modeled as a private channel.
+
+    BatchRoot = acc(uidx, uidN)
+    newBatchRoot = acc(uidx, salt)
+    proofUidx = acc(uidN)
+    newBatchRootProof = acc(salt)
+
+    accumulator is designed as merkle tree in this design.
+    
+    M : generate uidx & create batchRoot with it.
+    M -> SoC : (pkM, skSoC, pkSoC, uidx, BatchRoot)     //secure provisioning
+
+    M -> BC : [{BatchRoot}skM]
+    M -> A : ({BatchRoot}skM, proofUidx, uidx, pkSoc)
+    SoC -> A : {uidx}skSoC
+    BC -> A : [{BatchRoot}skM]
+    A -> M : salt, proofUidx, {newBatchRoot}skA
+    M -> BC : [{{newBatchRoot}skA}skM]
+    BC -> A : [{{newBatchRoot}skA}skM]
+    A -> SoC: ({{newBatchRoot}skA}skM, {newBatchRoot}skA, salt)
+ *)
+
+(* Loops if types are ignored *)
+set ignoreTypes = false.
+set traceDisplay = long.
+
+free c: channel.
+free bc: channel [private].
+free sc: channel [private].
+
+type id.
+type cfg.
+
+type pkey.
+type skey.
+
+(* somethimes we need to consider somme types as bytes *)
+fun id_to_bitstring(id): bitstring [data,typeConverter].
+fun cfg_to_bitstring(cfg): bitstring [data,typeConverter].
+fun pk_to_bitstring(pkey): bitstring [data,typeConverter].
+
+(* Signatures *)
+
+fun pk(skey): pkey.
+fun sign(bitstring, skey): bitstring.
+reduc forall m: bitstring, k: skey; getmess(sign(m,k)) = m.
+reduc forall m: bitstring, k: skey; checksign(sign(m,k), pk(k)) = m.
+
+(* Hash *)
+fun H(bitstring): bitstring.
+fun ccatH(bitstring, bitstring): bitstring.
+
+(* Ccat and dcat *)
+fun ccat(bitstring,bitstring): bitstring.
+(* l_dcat gives the left part of a contactenation. r_dcat isn't defined because uneeded *)
+reduc forall a: bitstring, b: bitstring; l_dcat(ccat(a,b)) = a.
+
+(* Secrecy assumptions *)
+free uidN : id [private].
+free skAlice: skey [private].
+not attacker(uidN).
+not attacker(skAlice).
+
+(* Queries *)
+query attacker(uidN). (* Correspond to P1 *)
+query attacker(skAlice).
+
+(* My event TODO: what is the diff beetween inj-event and event ? *)
+event ManSendCertif(pkey, bitstring).
+event socAcceptCertif(pkey, bitstring).
+
+event ManSendBCCertif(pkey, pkey).
+event AliceRecBRProof(pkey, pkey).
+
+event AliceSendModif(pkey,bitstring).
+event socAcceptModif(pkey,bitstring).
+
+(*query a: pkey, b: pkey;
+    event(socAcceptModif(a, a)).*)
+
+query pkA: pkey, pkM: pkey; (* Correspond to P2 *)
+    inj-event(AliceRecBRProof(pkM,pkA)) ==> inj-event(ManSendBCCertif(pkM,pkA)).
+
+query pkA: pkey, pkM: pkey, cert: bitstring; (* Correspond to P3 *)
+    inj-event(socAcceptCertif(pkA,cert)) ==> inj-event(ManSendCertif(pkM,cert)).
+
+query pkA: pkey, pkB: pkey, mod: bitstring;  (* Extended P3 *)
+    inj-event(socAcceptModif(pkA,mod)) ==> inj-event(AliceSendModif(pkB,mod)).
+
+query a: pkey, b: bitstring; (* Sanity check, must be false *)
+    event(socAcceptModif(a,b)).
+
+(* Manufacturer process *)
+let processMan(skMan: skey, pkMan: pkey, pkAlice: pkey) =
+    new uidx : id;
+    new skSoC : skey;
+    let pkSoc = pk(skSoC) in
+    let BuidN = id_to_bitstring(uidN) in
+    let proofUidx = H(BuidN) in
+    let Buidx = id_to_bitstring(uidx) in
+    let batchRoot = ccatH(H(Buidx),proofUidx) in
+    out(sc, (skSoC, pkSoc, uidx, proofUidx)); (* provision send. senPK isn't modeled because we decide Man already know pkSoC.*)
+    (*it's using a secure channel because it's done in a  secure environement *)
+    out(bc, (pkAlice, sign(batchRoot, skMan))); (* newBatch through blockchain. sign(batchRoot, skMan) is batchRoot *)
+    out(c, (pkAlice, sign(batchRoot, skMan),proofUidx,uidx,pkSoc,pkMan)); (* sendUidAndAccProof *)
+    in(c, (xpk: pkey, xsalt: id, xnewBatchRoot: bitstring, xnewBatchRootProof: bitstring)); (* sendNewBatch reception lbl 1 : ownership request*)
+    if xpk = pkMan then
+    let Bsalt = id_to_bitstring(xsalt) in
+    if H(Bsalt) = xnewBatchRoot then
+    if checksign(xnewBatchRootProof, pkAlice) = ccatH(H(Buidx),H(Bsalt)) then
+    let newOwnershipProof = sign(xnewBatchRootProof, skMan) in
+    event ManSendCertif(pkMan, newOwnershipProof);
+    out(c, (pkAlice, newOwnershipProof)); (* sendProof *)
+    event ManSendBCCertif(pkMan, pkAlice);
+    out(bc, (pkAlice, newOwnershipProof)). (* divideBatch, divideResp not modeled *)
+    
+
+(* Alice process *)
+let processAlice(skAlice: skey, pkAlice: pkey) =
+    in(bc, (xpk1: pkey, signedBroot: bitstring)); (* batchInfoResp, due to newBatch message of Man *)
+    if xpk1 = pkAlice then
+    in(c, (xpk2: pkey, signedBrootClear : bitstring ,xBRootProof: bitstring, xuidx: id,xpkSoC: pkey, xpkMan: pkey)); (* sendUidAndAccProof *)
+    if xpk2 = pkAlice then
+    let Broot = getmess(signedBroot) in
+    if checksign(signedBroot,xpkMan) = Broot then
+    if signedBrootClear = signedBroot then
+    in(c, signUid: bitstring); (* getScript and scriptResp with SoC*)
+    if checksign(signUid, xpkSoC) = id_to_bitstring(xuidx) then
+    if Broot = ccatH(H(id_to_bitstring(xuidx)), xBRootProof) then
+    new salt : id;
+    let Hsalt = H(id_to_bitstring(salt)) in
+    let newBRoot = ccatH(H(id_to_bitstring(xuidx)),Hsalt) in
+    let newBatchRootProof = sign(newBRoot, skAlice) in
+    out(c, (xpkMan, salt, Hsalt, newBatchRootProof)); (* sendNewBatch lbl 1 : ownership request*)
+    in(c, (xpk4: pkey, certif: bitstring)); (* sendProof reception *)
+    if xpk4 = pkAlice then
+    in(bc, (xpk5: pkey, xnewOwnershipProof: bitstring)); (* getBatchInfo and batchInfoResp*)
+    if xpk5 = pkAlice then
+    if xnewOwnershipProof = certif then
+    if checksign(xnewOwnershipProof, xpkMan) = newBatchRootProof then
+    event AliceRecBRProof(xpkMan, pkAlice); (* Alice received and accept data in blockchain *)
+    out(c, (xpkSoC, xnewOwnershipProof, pkAlice, Hsalt)); (* updateScript *)
+    new configScript : cfg;
+    let config = ccat(id_to_bitstring(xuidx),cfg_to_bitstring(configScript)) in
+    let signedConfig = sign(config, skAlice) in
+    event AliceSendModif(xpkSoC,signedConfig);
+    out(c, (xpkSoC, signedConfig)). (* updateScript (or updateConf) *)
+
+(* SoC process *)
+let processSoC(pkMan: pkey) =
+        in(sc, (skSoC: skey, pkSoC: pkey, uidx1 : id, Hroot: bitstring)); (* provision recpetion Provisioning from Manufacturer reception, Hroot is kind of a part of ownScript *)
+    if pkSoC = pk(skSoC) then
+    let signedUidx = sign(id_to_bitstring(uidx1), skSoC) in
+    out(c, signedUidx); (* getScript and scriptResp*)
+    in(c, (xpk6: pkey, ynewOwnershipProof: bitstring, aliceKey: pkey, xHsalt: bitstring)); (* updateScript *)
+    if xpk6 = pkSoC then
+    let certifPartB = getmess(ynewOwnershipProof) in
+    if checksign(ynewOwnershipProof, pkMan) = certifPartB then
+    let newBatchRootSoC = getmess(certifPartB) in
+    if checksign(certifPartB,aliceKey) = newBatchRootSoC then
+    if newBatchRootSoC = ccatH(H(id_to_bitstring(uidx1)),xHsalt) then
+    event socAcceptCertif(aliceKey,ynewOwnershipProof);
+    in(c, (xpk7: pkey, signedConf: bitstring)); (* updateConf *)
+    if xpk7 = pkSoC then
+    let dataConf = getmess(signedConf) in
+    if checksign(signedConf,aliceKey) = dataConf then
+    let confId = l_dcat(dataConf) in
+    if confId = id_to_bitstring(uidx1) then
+    event socAcceptModif(aliceKey, signedConf).
+
+(* Start process, we expose actors public key to attacker and start an unbounded number of sessions of all the actors *)
+process 
+    let pkAlice = pk(skAlice) in
+    out(c, pkAlice);
+    new skMan : skey;
+    let pkMan = pk(skMan) in
+    out(c, pkMan);
+    (
+        (!processMan(skMan, pkMan, pkAlice)) |
+        (!processAlice(skAlice, pkAlice)) |
+        (!processSoC(pkMan))
+    )
+

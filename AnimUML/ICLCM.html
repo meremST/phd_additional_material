@@ -1,0 +1,512 @@
+<script>
+	// @ts-check
+	/**
+	 * @type {import("./Model.d.ts").Model<false>}
+	 */
+	const model =
+		{
+			name: "Imported_ICLCM",
+			objects: [
+				{
+					name: "Blockchain",
+					isActor: true,
+					behavior: String.raw`
+						
+						state "smartContract" as smartContract {
+						}
+						smartContract as "T1" : getBatchInfo()   / User.batchInfoResp();
+						smartContract as "T2" : divideBatch()   / User.divideResp();
+						[*] -> smartContract as "init2smartContract_1" :    / 
+					`,
+					features: String.raw`
+						
+						getBatchInfo()
+						divideBatch()
+					`,
+				},
+				{
+					name: "User",
+					isActor: true,
+					behavior: String.raw`
+						
+						state "Actions" as Actions {
+						}
+						Actions as "T1" :   [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)] / iface.setLcmOn();
+						Actions as "T2" :   [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)] / iface.setLcmOff();
+						Actions as "T3" :   [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)] / iface.powerOn();
+						Actions as "T4" :   [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)] / iface.powerOff();
+						Actions as "T5" :   [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)] / iface.updateScript(true);
+						Actions as "T6" :   [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)] / iface.updateScript(false);
+						Actions as "T7" :   [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)] / iface.getScript();
+						Actions as "T8" : scriptResp()   / 
+						Actions as "T9" :   [EP_IS_EMPTY(Blockchain) && EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)] / Blockchain.getBatchInfo();
+						Actions as "T10" :   [EP_IS_EMPTY(Blockchain) && EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)] / Blockchain.divideBatch();
+						Actions as "T11" : batchInfoResp()   / 
+						Actions as "T12" : divideResp()   / 
+						[*] -> Actions as "init2Actions_1" :    / 
+					`,
+					features: String.raw`
+						
+						scriptResp()
+						divideResp()
+						batchInfoResp()
+					`,
+				},
+				{
+					name: "iface",
+					class: "ChipInterface",
+					behavior: String.raw`
+						
+						state "icInterface" as icInterface {
+							state "choiceUpdate" as choiceUpdate <<choice>>
+							
+							state "pOnLcmOn" as pOnLcmOn {
+							}
+							pOnLcmOn as "T1" : setLcmOn()   / 
+							pOnLcmOn as "T2" : setLcmOff()   / 
+							pOnLcmOn as "T3" : powerOn()   / 
+							state "pOnLcmOff" as pOnLcmOff {
+							}
+							pOnLcmOff as "T1" : updateScript(_)   / 
+							pOnLcmOff as "T2" : getScript()   / 
+							pOnLcmOff as "T3" : setLcmOn()   / 
+							pOnLcmOff as "T4" : setLcmOff()   / 
+							pOnLcmOff as "T5" : powerOn()   / 
+							state "pOffLcmOff" as pOffLcmOff {
+							}
+							pOffLcmOff as "T1" : updateScript(_)   / 
+							pOffLcmOff as "T2" : getScript()   / 
+							pOffLcmOff as "T3" : powerOff()   / 
+							pOffLcmOff as "T4" : setLcmOff()   / 
+							state "pOffLcmOn" as pOffLcmOn {
+							}
+							pOffLcmOn as "T1" : updateScript(_)   / 
+							pOffLcmOn as "T2" : getScript()   / 
+							pOffLcmOn as "T3" : powerOff()   / 
+							pOffLcmOn as "T4" : setLcmOn()   / 
+							state "waitingScriptResp" as waitingScriptResp {
+							}
+							state "waitingScriptUpdate" as waitingScriptUpdate {
+							}
+							[*] -> pOffLcmOff as "init2pOffLcmOff_1" :    / 
+							pOffLcmOff -> pOnLcmOff as "pOffLcmOff2pOnLcmOff_1" : powerOn()   / manager.powerOn(false);
+							pOnLcmOff -> pOffLcmOff as "pOnLcmOff2pOffLcmOff_1" : powerOff()   / manager.powerOff();
+							pOffLcmOff -> pOffLcmOn as "pOffLcmOff2pOffLcmOn_1" : setLcmOn()   / 
+							pOffLcmOn -> pOffLcmOff as "pOffLcmOn2pOffLcmOff_1" : setLcmOff()   / 
+							pOffLcmOn -> pOnLcmOn as "pOffLcmOn2pOnLcmOn_1" : powerOn()   / manager.powerOn(true);
+							pOnLcmOn -> pOffLcmOn as "pOnLcmOn2pOffLcmOn_1" : powerOff()   / manager.powerOff();
+							pOnLcmOn -> waitingScriptResp as "pOnLcmOn2waitingScriptResp_1" : getScript()   / manager.getScript();
+							waitingScriptResp -> pOnLcmOn as "waitingScriptResp2pOnLcmOn_1" : scriptResp()   / User.scriptResp();
+							pOnLcmOn -> choiceUpdate as "pOnLcmOn2choiceUpdate_1" : updateScript(success)   / 
+							choiceUpdate -> waitingScriptUpdate as "choiceUpdate2waitingScriptUpdate_1" :   [success == true] / manager.updateScript(true);
+							choiceUpdate -> waitingScriptUpdate as "choiceUpdate2waitingScriptUpdate_2" :   [else] / manager.updateScript(false);
+							waitingScriptUpdate -> pOnLcmOn as "waitingScriptUpdate2pOnLcmOn_1" : scriptResp()   / User.scriptResp();
+						}
+						[*] -> icInterface as "init2icInterface_1" :    / 
+					`,
+					features: String.raw`
+						
+						powerOn()
+						powerOff()
+						setLcmOn()
+						setLcmOff()
+						getScript()
+						scriptResp()
+						updateScript(isValid : Boolean)
+					`,
+				},
+				{
+					name: "manager",
+					class: "ChipLifeCycleManager",
+					behavior: String.raw`
+						state "bootChoice" as bootChoice <<choice>>
+						
+						state "normalMode" as normalMode {
+							
+							state "nmWaiting" as nmWaiting {
+							}
+							state "nmWorking" as nmWorking {
+							}
+							state "waitingScript" as waitingScript {
+							}
+							state "updatingConfig" as updatingConfig {
+							}
+							state "waitingConfigration" as waitingConfigration {
+							}
+							[*] -> nmWaiting as "init2nmWaiting_1" :    / ipCtrlr.powerOn();
+							nmWaiting -> nmWorking as "nmWaiting2nmWorking_1" : ipConfigured()   / 
+							nmWorking -> waitingScript as "nmWorking2waitingScript_1" : wakeUp()   / SecureStorage.getScript();
+							waitingScript -> updatingConfig as "waitingScript2updatingConfig_1" : scriptResp()   / SecureStorage.setConfig();
+							updatingConfig -> waitingConfigration as "updatingConfig2waitingConfigration_1" : writeAck()   / ipCtrlr.updateConfig();
+							waitingConfigration -> nmWorking as "waitingConfigration2nmWorking_1" : ipConfigured()   / sClk.stopAlarm();\nIT = false;
+						}
+						state "clcmMode" as clcmMode {
+							state "choice1" as choice1 <<choice>>
+							
+							state "executingScript" as executingScript {
+							}
+							executingScript as "T1" :   [IT != true] / sClk.setAlarm();\nIT = true;
+							state "clcmWaiting" as clcmWaiting {
+							}
+							state "clcmWaitingScript2" as clcmWaitingScript2 {
+							}
+							state "clcmWaitingScript" as clcmWaitingScript {
+							}
+							state "waitingConfigWrite" as waitingConfigWrite {
+							}
+							[*] -> clcmWaiting as "init2clcmWaiting_1" :    / valid = false;
+							clcmWaiting -> clcmWaitingScript2 as "clcmWaiting2clcmWaitingScript2_1" : getScript()   / SecureStorage.getScript();
+							clcmWaitingScript2 -> clcmWaiting as "clcmWaitingScript22clcmWaiting_1" : scriptResp()   / iface.scriptResp();
+							clcmWaiting -> clcmWaitingScript as "clcmWaiting2clcmWaitingScript_1" : updateScript(_valid)   / SecureStorage.getScript();\nvalid=_valid;
+							clcmWaitingScript -> choice1 as "clcmWaitingScript2choice1_1" : scriptResp()   / 
+							choice1 -> clcmWaiting as "choice12clcmWaiting_1" :   [else] / scriptResp();
+							choice1 -> executingScript as "choice12executingScript_1" :   [valid == true] / SecureStorage.setScript(true);\nvalid=false;
+							executingScript -> waitingConfigWrite as "executingScript2waitingConfigWrite_1" : writeAck()   / iface.scriptResp();\nSecureStorage.setConfig();
+							waitingConfigWrite -> clcmWaiting as "waitingConfigWrite2clcmWaiting_1" : writeAck()   / 
+						}
+						state "lcmsWaitingPowerOn" as lcmsWaitingPowerOn {
+						}
+						[*] -> lcmsWaitingPowerOn as "init2lcmsWaitingPowerOn_1" :    / 
+						lcmsWaitingPowerOn -> bootChoice as "lcmsWaitingPowerOn2bootChoice_1" : powerOn(lcmPin)   / 
+						bootChoice -> clcmMode as "bootChoice2clcmMode_1" :   [lcmPin == true] / 
+						bootChoice -> normalMode as "bootChoice2normalMode_1" :   [else] / 
+						normalMode -> lcmsWaitingPowerOn as "normalMode2lcmsWaitingPowerOn_1" : powerOff()   / ipCtrlr.powerOff();
+						clcmMode -> lcmsWaitingPowerOn as "clcmMode2lcmsWaitingPowerOn_1" : powerOff()   / 
+					`,
+					features: String.raw`
+						
+						powerOn(lcmPin : Boolean)
+						powerOff()
+						updateScript(isValid : Boolean)
+						wakeUp()
+						ipConfigured()
+						getScript()
+						scriptResp()
+						writeAck()
+					`,
+				},
+				{
+					name: "ipCtrlr",
+					class: "IPActivationController",
+					behavior: String.raw`
+						
+						state "powerOn" as powerOn {
+							
+							state "settingConfig" as settingConfig {
+							}
+							state "waitingUpdate" as waitingUpdate {
+							}
+							[*] -> settingConfig as "init2settingConfig_1" :    / SecureStorage.getConfig();
+							settingConfig -> waitingUpdate as "settingConfig2waitingUpdate_1" : configResp()   / SoCIPs.setIPs();\nmanager.ipConfigured();
+							waitingUpdate -> settingConfig as "waitingUpdate2settingConfig_1" : updateConfig()   / SecureStorage.getConfig();
+						}
+						state "powerOff" as powerOff {
+						}
+						[*] -> powerOff as "init2powerOff_1" :    / 
+						powerOff -> powerOn as "powerOff2powerOn_1" : powerOn()   / 
+						powerOn -> powerOff as "powerOn2powerOff_1" : powerOff()   / 
+					`,
+					features: String.raw`
+						
+						powerOn()
+						powerOff()
+						updateConfig()
+						configResp()
+						IPsAreSet()
+					`,
+				},
+				{
+					name: "SecureStorage",
+					isActor: true,
+					behavior: String.raw`
+						
+						state "memAccess" as memAccess {
+						}
+						memAccess as "T1" : getScript()   / manager.scriptResp();
+						memAccess as "T2" : getConfig()   / ipCtrlr.configResp();
+						memAccess as "T3" : setScript(none)   / manager.writeAck();
+						memAccess as "T4" : setConfig()   / manager.writeAck();
+						[*] -> memAccess as "init2memAccess_1" :    / 
+					`,
+					features: String.raw`
+						
+						getScript()
+						scriptResp()
+						setScript(isValid : Boolean)
+						getConfig()
+						setConfig()
+					`,
+				},
+				{
+					name: "sClk",
+					class: "SecureTimingSystem",
+					behavior: String.raw`
+						
+						state "stsWaiting" as stsWaiting {
+						}
+						state "stsCounting" as stsCounting {
+						}
+						state "stsWakeUp" as stsWakeUp {
+						}
+						[*] -> stsWaiting as "init2stsWaiting_1" :    / 
+						stsWaiting -> stsCounting as "stsWaiting2stsCounting_1" : setAlarm()   / 
+						stsCounting -> stsWakeUp as "stsCounting2stsWakeUp_1" : after(10day)   / manager.wakeUp();
+						stsWakeUp -> stsWaiting as "stsWakeUp2stsWaiting_1" : stopAlarm()   / 
+					`,
+					features: String.raw`
+						
+						setAlarm()
+						stopAlarm()
+					`,
+				},
+				{
+					name: "SoCIPs",
+					isActor: true,
+					behavior: String.raw`
+						
+						state "waitingConfig" as waitingConfig {
+						}
+						waitingConfig as "T1" : setIPs()   / 
+						[*] -> waitingConfig as "init2waitingConfig_1" :    / 
+					`,
+					features: String.raw`
+						
+						setIPs()
+					`,
+				},
+			],
+			connectorByName: {
+				users2ledger: {
+					ends: [
+						"User",
+						"Blockchain",
+					],
+					endNames: [
+						"user",
+						"ledger",
+					],
+					possibleMessages: {
+						forward: [
+							"getBatchInfo",
+							"divideBatch",
+						],
+						reverse: [
+							"batchInfoResp",
+							"divideResp",
+						],
+					},
+				},
+				users2ci: {
+					ends: [
+						"User",
+						"iface",
+					],
+					endNames: [
+						"user",
+						"ci",
+					],
+					possibleMessages: {
+						forward: [
+							"updateScript",
+							"getScript",
+							"powerOn",
+							"powerOff",
+							"setLcmOn",
+							"setLcmOff",
+						],
+						reverse: [
+							"scriptResp",
+						],
+					},
+				},
+				ci2clcm: {
+					ends: [
+						"iface",
+						"manager",
+					],
+					endNames: [
+						"ci",
+						"clcm",
+					],
+					possibleMessages: {
+						forward: [
+							"updateScript",
+							"getScript",
+							"powerOn",
+							"powerOff",
+						],
+						reverse: [
+							"scriptResp",
+						],
+					},
+				},
+				clcm2sstr: {
+					ends: [
+						"manager",
+						"SecureStorage",
+					],
+					endNames: [
+						"sstr",
+						"clcm",
+					],
+					possibleMessages: {
+						forward: [
+							"getScript",
+							"setScript",
+							"setConfig",
+						],
+						reverse: [
+							"scriptResp",
+							"writeAck",
+						],
+					},
+				},
+				sts2clcm: {
+					ends: [
+						"sClk",
+						"manager",
+					],
+					endNames: [
+						"sts",
+						"clcm",
+					],
+					possibleMessages: {
+						forward: [
+							"wakeUp",
+						],
+						reverse: [
+							"setAlarm",
+							"stopAlarm",
+						],
+					},
+				},
+				ipac2sstr: {
+					ends: [
+						"ipCtrlr",
+						"SecureStorage",
+					],
+					endNames: [
+						"ipac",
+						"sstr",
+					],
+					possibleMessages: {
+						forward: [
+							"getConfig",
+						],
+						reverse: [
+							"configResp",
+						],
+					},
+				},
+				clcm2ipac: {
+					ends: [
+						"manager",
+						"ipCtrlr",
+					],
+					endNames: [
+						"clcm",
+						"ipac",
+					],
+					possibleMessages: {
+						forward: [
+							"updateConfig",
+							"powerOn",
+							"powerOff",
+						],
+						reverse: [
+							"ipConfigured",
+						],
+					},
+				},
+				ipac2socip: {
+					ends: [
+						"ipCtrlr",
+						"SoCIPs",
+					],
+					endNames: [
+						"ipac",
+						"socip",
+					],
+					possibleMessages: {
+						forward: [
+							"setIPs",
+						],
+					},
+				},
+			},
+			watchExpressions: {
+				ifaceHasPowerOff: "EP_CONTAINS(iface, powerOff)",
+				clcmOff: "IS_IN_STATE(manager,manager.lcmsWaitingPowerOn)",
+				ipacOff: "IS_IN_STATE(ipCtrlr,ipCtrlr.powerOff)",
+				chipIsShutdown: "IS_IN_STATE(manager,manager.lcmsWaitingPowerOn) && IS_IN_STATE(ipCtrlr,ipCtrlr.powerOff)",
+				ifaceHasScriptMessage: "EP_CONTAINS(iface, updateScript) || EP_CONTAINS(iface, getScript)",
+				userHasScriptResp: "EP_CONTAINS(User, scriptResp)",
+				ifaceIsInStatePOnLcmOn: "IS_IN_STATE(iface, iface.icInterface.pOnLcmOn)",
+				sstrHasSetScript: "EP_CONTAINS(SecureStorage, setScript)",
+				sstrHasSetConfig: "EP_CONTAINS(SecureStorage, setConfig)",
+				memoryWrite: "EP_CONTAINS(SecureStorage, setScript) || EP_CONTAINS(SecureStorage, setConfig)",
+				managerHasValidUpdate: "IS_IN_STATE(manager,manager.clcmMode.executingScript)",
+				IPsHasSetIP: "EP_CONTAINS(SoCIPs, setIPs)",
+			},
+			LTLProperties: {
+				sanityCheck1: "[](ifaceHasPowerOff -> <>chipIsShutdown)",
+				liveness1_P4: "[]([]ifaceIsInStatePOnLcmOn -> [](ifaceHasScriptMessage -> <>(userHasScriptResp || ifaceHasPowerOff)))",
+				notDeadlock: "[] !|deadlock|",
+				liveness2_P5: "[](managerHasValidUpdate -> <>(memoryWrite || ifaceHasPowerOff))",
+				safety1_P5: "!memoryWrite W managerHasValidUpdate",
+				safety2_P6: "[](<>IPsHasSetIP -> (sstrHasSetScript -> (!IPsHasSetIP U (sstrHasSetConfig && !IPsHasSetIP))) U IPsHasSetIP)",
+			},
+			settings: {
+				display: {
+					hideLinks: false,
+					hideClasses: false,
+					hideOperations: false,
+					hideMethods: false,
+					showPorts: false,
+					showEndNames: false,
+					hideStateMachines: false,
+					hideOuterSMBoxes: false,
+					showExplicitSM: false,
+					hideStates: false,
+					showPseudostateInvariants: false,
+					hideSets: false,
+					showTransitions: false,
+				},
+				semantics: {
+					fireInitialTransitions: true,
+					autoFireAfterChoice: true,
+					autoReceiveDisabled: false,
+					considerGuardsTrue: false,
+					checkEvents: true,
+					keepOneMessagePerTrigger: true,
+					enableEventPools: true,
+					matchFirst: true,
+					symbolicValues: false,
+					reactiveSystem: true,
+				},
+				interface: {
+					hideEmptyHistory: false,
+					disableInteractionSelection: false,
+					disableModelSelection: false,
+					disableObjectSelection: false,
+					disableDoc: false,
+					disableSettings: false,
+					disableHistorySettings: false,
+					disableReset: false,
+					disableSwitchDiagram: false,
+					onlyInteraction: false,
+					hideInteraction: false,
+					disableExports: false,
+					hideHistory: false,
+					disableEdit: false,
+					historyType: "TCSVG sequence",
+				},
+				tools: {
+				},
+			},
+		}
+	;
+	document.write(`
+		<iframe width="100%" height="100%" src='https://animuml20220518.kher.nl/AnimUML.html#${encodeURIComponent(JSON.stringify(model)).replace(/'/g, '%27')}'></iframe>
+	`);
+</script>

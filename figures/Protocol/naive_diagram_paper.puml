@@ -1,0 +1,89 @@
+@startuml
+actor Manufacturer
+participant "SoC[0]" as SoC_0
+collections "SoC[1..N]" as SoC_N
+actor Blockchain
+
+Manufacturer -> SoC_0 : provision(uid0, pkMan, ownScript)
+
+
+SoC_0 -> Manufacturer : sendPK(pkSoc0)
+
+loop for k in [1..N]
+	Manufacturer -> SoC_N : provision(skSoC(k),uid(k), pkMan, ownScript)
+
+	' SoC_N -> Manufacturer : sendPK(pkSocN)
+end loop
+
+
+Manufacturer -> Blockchain : newBatch(batchRoot)
+
+
+Blockchain --> Manufacturer : newBatch() : contractAddr, batchAddr
+
+@enduml
+@startuml Protocol
+
+hide footbox
+
+actor Alice
+actor Manufacturer
+participant "SoC[0]" as SoC_0
+'collections "SoC[1..N]" as SoC_N
+actor Blockchain
+
+ref over Manufacturer, Blockchain : Provisioning
+
+Alice <<-[#green]->> Manufacturer : //        physical/commercial trades//
+
+hnote over SoC_0
+ is at Alice location
+endhnote
+
+'group Chip ownership modification
+Manufacturer -> Alice : sendUidAndAccProof(batchRoot,\n    proofuid0, pkSoc0, pkMan, script)
+
+Alice -> SoC_0 : getScript()
+
+SoC_0 -> Alice : scriptResp(signUid0)
+
+Alice -> Blockchain : getBatchInfo(contractAddr, batchAddr)
+Blockchain -> Alice : batchInfoResp(batchRootProof)
+
+Alice -> Manufacturer : sendNewBatch(salt,\n    newBatchRoot, newBatchRootProof)
+
+Manufacturer -> Blockchain : divideBatch(newOwnershipProof, contractAddr,batchAddr)
+
+Blockchain  -> Manufacturer : divideResp(newBatchAddr)
+
+Manufacturer -> Alice : sendProof(contractAddr, newBatchAddr)
+
+group Actual SoC ownership transfer
+Alice -> Blockchain : getBatchInfo(contractAddr, newBatchAddr)
+Blockchain -> Alice : batchInfoResp(newOwnershipProof)
+
+
+Alice -> SoC_0: updateScript(newOwnershipProof,\n    salt, newBatchRoot, newBatchRootProof,pkAlice)
+
+SoC_0 -> Alice : scriptResp(signedScript)
+end
+
+Alice <<-[#green]->> Manufacturer : //        commercial trades//
+
+ref over Alice, SoC_0 : ConfigurationModification
+
+@enduml
+@startuml
+actor Alice
+actor Manufacturer
+participant "SoC[0]" as SoC_0
+
+group only if Manufacturer have rights on concerned IPs
+Alice -> Manufacturer : sendNewScript(configModification)
+Manufacturer -> Alice: newScriptResp(signedconfigModification)
+end
+
+Alice -> SoC_0 : updateScript(signedconfigModification)
+
+SoC_0 -> Alice : scriptResp(newScript)
+@enduml

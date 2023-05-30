@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="429px" preserveAspectRatio="none" style="width:727px;height:429px;" version="1.1" viewBox="0 0 727 429" width="727px" zoomAndPan="magnify"><defs><filter height="300%" id="f1lqaq0xpy6jxq" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><g id="User.Actions"><rect fill="#FEFECE" filter="url(#f1lqaq0xpy6jxq)" height="329.6406" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="706" x="7" y="86"/><line style="stroke:#A80036;stroke-width:1.5;" x1="7" x2="713" y1="112.2969" y2="112.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="51" x="334.5" y="103.9951">Actions</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="502" x="12" y="128.4355">[EP_IS_EMPTY(User) &amp;&amp; EP_IS_EMPTY(SecureStorage) &amp;&amp; EP_IS_EMPTY(SoCIPs)]/</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="109" x="28" y="142.4043">iface.setLcmOn();</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="502" x="12" y="156.373">[EP_IS_EMPTY(User) &amp;&amp; EP_IS_EMPTY(SecureStorage) &amp;&amp; EP_IS_EMPTY(SoCIPs)]/</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="109" x="28" y="170.3418">iface.setLcmOff();</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="502" x="12" y="184.3105">[EP_IS_EMPTY(User) &amp;&amp; EP_IS_EMPTY(SecureStorage) &amp;&amp; EP_IS_EMPTY(SoCIPs)]/</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="103" x="28" y="198.2793">iface.powerOn();</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="502" x="12" y="212.248">[EP_IS_EMPTY(User) &amp;&amp; EP_IS_EMPTY(SecureStorage) &amp;&amp; EP_IS_EMPTY(SoCIPs)]/</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="103" x="28" y="226.2168">iface.powerOff();</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="502" x="12" y="240.1855">[EP_IS_EMPTY(User) &amp;&amp; EP_IS_EMPTY(SecureStorage) &amp;&amp; EP_IS_EMPTY(SoCIPs)]/</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="155" x="28" y="254.1543">iface.updateScript(true);</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="502" x="12" y="268.123">[EP_IS_EMPTY(User) &amp;&amp; EP_IS_EMPTY(SecureStorage) &amp;&amp; EP_IS_EMPTY(SoCIPs)]/</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="159" x="28" y="282.0918">iface.updateScript(false);</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="502" x="12" y="296.0605">[EP_IS_EMPTY(User) &amp;&amp; EP_IS_EMPTY(SecureStorage) &amp;&amp; EP_IS_EMPTY(SoCIPs)]/</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="105" x="28" y="310.0293">iface.getScript();</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="76" x="12" y="323.998">scriptResp()</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="686" x="12" y="337.9668">[EP_IS_EMPTY(Blockchain) &amp;&amp; EP_IS_EMPTY(User) &amp;&amp; EP_IS_EMPTY(SecureStorage) &amp;&amp; EP_IS_EMPTY(SoCIPs)]/</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="165" x="28" y="351.9355">Blockchain.getBatchInfo();</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="686" x="12" y="365.9043">[EP_IS_EMPTY(Blockchain) &amp;&amp; EP_IS_EMPTY(User) &amp;&amp; EP_IS_EMPTY(SecureStorage) &amp;&amp; EP_IS_EMPTY(SoCIPs)]/</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="157" x="28" y="379.873">Blockchain.divideBatch();</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="100" x="12" y="393.8418">batchInfoResp()</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="77" x="12" y="407.8105">divideResp()</text></g><ellipse cx="360" cy="16" fill="#000000" filter="url(#f1lqaq0xpy6jxq)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><!--MD5=[cf618ef30faa21cf70b7112cb3aa0559]
+link *start to User.Actions--><path d="M360,26.134 C360,37.131 360,57.102 360,80.749 " fill="none" id="*start-to-User.Actions" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="360,85.849,364,76.849,360,80.849,356,76.849,360,85.849" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[cf6dbf6c03fb4640f35b5cb2f07fa684]
+@startuml
+'left to right direction
+
+hide empty description
+
+
+
+
+	
+	
+				
+				
+				
+				
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.setLcmOn();
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.setLcmOff();
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.powerOn();
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.powerOff();
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.updateScript(true);
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.updateScript(false);
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.getScript();
+					User.Actions : scriptResp()
+					User.Actions : [EP_IS_EMPTY(Blockchain) && EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    Blockchain.getBatchInfo();
+					User.Actions : [EP_IS_EMPTY(Blockchain) && EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    Blockchain.divideBatch();
+					User.Actions : batchInfoResp()
+					User.Actions : divideResp()
+				
+				state "Actions" as User.Actions  
+				
+				
+			
+	
+				[*] - -> User.Actions 
+				
+
+@enduml
+
+@startuml
+
+hide empty description
+
+
+
+
+	
+	
+				
+				
+				
+				
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.setLcmOn();
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.setLcmOff();
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.powerOn();
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.powerOff();
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.updateScript(true);
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.updateScript(false);
+					User.Actions : [EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    iface.getScript();
+					User.Actions : scriptResp()
+					User.Actions : [EP_IS_EMPTY(Blockchain) && EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    Blockchain.getBatchInfo();
+					User.Actions : [EP_IS_EMPTY(Blockchain) && EP_IS_EMPTY(User) && EP_IS_EMPTY(SecureStorage) && EP_IS_EMPTY(SoCIPs)]/\n    Blockchain.divideBatch();
+					User.Actions : batchInfoResp()
+					User.Actions : divideResp()
+				
+				state "Actions" as User.Actions  
+				
+				
+			
+	
+				[*] - -> User.Actions 
+				
+
+@enduml
+
+PlantUML version 1.2020.21(Mon Nov 30 17:40:11 CET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>
