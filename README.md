@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10579514.svg)](https://doi.org/10.5281/zenodo.10579514)
+
 # Additionnal Material
 
 This repository contains the different models used during the design of a life cycle management system (LCMS).
